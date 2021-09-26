@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,16 +7,36 @@ public class PlayerEquipController : MonoBehaviour
 {
     [SerializeField]
     PlayerEquipment _equipGlasses = null;
+    [SerializeField]
+    PlayerEquipment _equipBelts = null;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-            EquipGlass();
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            EquipGlass(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            EquipGlass(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            EquipGlass(2);
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+            EquipGlass(3);
+        else if (Input.GetKeyDown(KeyCode.Alpha5))
+            EquipBelt(0);
+        else if (Input.GetKeyDown(KeyCode.Alpha6))
+            EquipBelt(1);
+        else if (Input.GetKeyDown(KeyCode.Alpha7))
+            EquipBelt(2);
     }
 
-    void EquipGlass()
+    private void EquipBelt(int pIndex)
     {
-        SOEquipment[] t_equipments = Resources.LoadAll<SOEquipment>("Equipments");
-        _equipGlasses.Equip(t_equipments[0].Type, t_equipments[0].Animator);
+        SOEquipment[] t_equipmentsBelts = Resources.LoadAll<SOEquipment>("Equipments/Belts");
+        _equipBelts.Equip(t_equipmentsBelts[pIndex].Type, t_equipmentsBelts[pIndex].Animator);
+    }
+
+    void EquipGlass(int pIndex)
+    {
+        SOEquipment[] t_equipmentsGlasses = Resources.LoadAll<SOEquipment>("Equipments/Glasses");
+        _equipGlasses.Equip(t_equipmentsGlasses[pIndex].Type, t_equipmentsGlasses[pIndex].Animator);
     }
 }

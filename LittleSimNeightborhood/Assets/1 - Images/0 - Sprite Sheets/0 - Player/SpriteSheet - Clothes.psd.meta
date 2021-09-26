@@ -4,13 +4,55 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -3091170511748471272
-    second: Glasses Black - Front
+    second: Glasses - Black - Front
   - first:
       213: 6157024575616085358
-    second: Glasses Black - Side
+    second: Glasses - Black - Side
   - first:
       213: 7722219736691057272
-    second: Glasses Black - Back
+    second: Glasses - Black - Back
+  - first:
+      213: 1905096796402687639
+    second: Glasses - Blue - Front
+  - first:
+      213: 9209726790862991681
+    second: Glasses - Blue - Side
+  - first:
+      213: -5333678363554647865
+    second: Glasses - Blue - Back
+  - first:
+      213: -9127629961076217574
+    second: Glasses - Red - Front
+  - first:
+      213: -7687701127222269003
+    second: Glasses - Red - Side
+  - first:
+      213: 7383666421707286566
+    second: Glasses - Red - Back
+  - first:
+      213: 6578767583416702695
+    second: Glasses - Monocles - Front
+  - first:
+      213: -4079376723578832503
+    second: Glasses - Monocles - Side
+  - first:
+      213: 2059983507623867190
+    second: Belt - 01 Golden - Front
+  - first:
+      213: -1172370897818725153
+    second: Belt - 01 Golden - Side
+  - first:
+      213: -1256300849512715973
+    second: Belt - 01 Golden - Back
+  - first:
+      213: 2850307966994837740
+    second: Belt - 01 Dark - Front
+  - first:
+      213: -314858596667175839
+    second: Belt - 01 Dark - Side & Back
+  - first:
+      213: 2303310828850320514
+    second: Bow Tie - BW - Front
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -100,15 +142,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glasses Black - Front
+      name: Glasses - Black - Front
       rect:
         serializedVersion: 2
         x: 0
-        y: 488
-        width: 24
-        height: 24
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,15 +163,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glasses Black - Side
+      name: Glasses - Black - Side
       rect:
         serializedVersion: 2
-        x: 24
-        y: 488
-        width: 24
-        height: 24
+        x: 32
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -142,15 +184,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glasses Black - Back
+      name: Glasses - Black - Back
       rect:
         serializedVersion: 2
-        x: 48
-        y: 488
-        width: 24
-        height: 24
+        x: 64
+        y: 224
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +200,300 @@ TextureImporter:
       bones: []
       spriteID: 8722bfabfe5da2b60800000000000000
       internalID: 7722219736691057272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Blue - Front
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e11545173407a10800000000000000
+      internalID: 1905096796402687639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Blue - Side
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14179c798b58fcf70800000000000000
+      internalID: 9209726790862991681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Blue - Back
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0732299c7faf5b0800000000000000
+      internalID: -5333678363554647865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Red - Front
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a19e6d029e4245180800000000000000
+      internalID: -9127629961076217574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Red - Side
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbeb845e8ccf4590800000000000000
+      internalID: -7687701127222269003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Red - Back
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 628a7dd7d7d087660800000000000000
+      internalID: 7383666421707286566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Monocles - Front
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e65865e24a7c4b50800000000000000
+      internalID: 6578767583416702695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glasses - Monocles - Side
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989361ebb742367c0800000000000000
+      internalID: -4079376723578832503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belt - 01 Golden - Front
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633751ff518869c10800000000000000
+      internalID: 2059983507623867190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belt - 01 Golden - Side
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd4528241e6eabfe0800000000000000
+      internalID: -1172370897818725153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belt - 01 Golden - Back
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39e5c59809b09ee0800000000000000
+      internalID: -1256300849512715973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belt - 01 Dark - Front
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce071319ef35e8720800000000000000
+      internalID: 2850307966994837740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Belt - 01 Dark - Side & Back
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ccc2746c561abf0800000000000000
+      internalID: -314858596667175839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bow Tie - BW - Front
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2841fe0def007ff10800000000000000
+      internalID: 2303310828850320514
       vertices: []
       indices: 
       edges: []

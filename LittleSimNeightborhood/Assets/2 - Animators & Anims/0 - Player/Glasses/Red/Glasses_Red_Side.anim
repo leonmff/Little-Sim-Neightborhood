@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerGlasses_Side
+  m_Name: Glasses_Red_Side
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 6157024575616085358, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
+      value: {fileID: -7687701127222269003, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 6157024575616085358, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
+    - {fileID: -7687701127222269003, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

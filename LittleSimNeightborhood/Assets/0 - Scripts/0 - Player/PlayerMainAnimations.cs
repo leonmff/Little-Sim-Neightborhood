@@ -14,14 +14,18 @@ public class PlayerMainAnimations : PlayerAnimation
 
     void FlipPlayer()
     {
-        float t_directionX = _playerMovement.Direction.x;
-        if (t_directionX == 0)
+        if (_playerMovement.Direction.x == 0 && _playerMovement.Direction.y == 0)
             return;
 
-        if (t_directionX > 0 && _facingLeft || t_directionX < 0 && !_facingLeft)
+        if (_playerMovement.Direction.y != 0 && _playerMovement.Direction.x == 0)
+        {
+            _facingLeft = transform.localScale.x < 0 ? !_facingLeft : _facingLeft;
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, 1f);
+        }
+        else if (_playerMovement.Direction.x > 0 && _facingLeft || _playerMovement.Direction.x < 0 && !_facingLeft)
         {
             transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, 1f);
-            _facingLeft = t_directionX < 0;
+            _facingLeft = _playerMovement.Direction.x < 0;
         }
     }
 }

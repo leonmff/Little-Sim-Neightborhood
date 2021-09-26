@@ -13,5 +13,7 @@ public class PlayerEquipment : PlayerAnimation
     {
         Type = pType;
         _anim.runtimeAnimatorController = pAnimator;
+        
+        SetAnimationParameters(_playerMovement.DirectionLast);
     }
 }

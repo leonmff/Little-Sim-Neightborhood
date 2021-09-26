@@ -3925,3 +3925,388 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1779.407309 seconds.
+  path: Assets/1 - Images/0 - Sprite Sheets/0 - Player/SpriteSheet - Clothes.psd
+  artifactKey: Guid(571b992123bae3440b9533d49f39eb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/1 - Images/0 - Sprite Sheets/0 - Player/SpriteSheet - Clothes.psd using Guid(571b992123bae3440b9533d49f39eb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91fbc843934e5706c0bba9e84b45105c') in 0.058348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 73.890009 seconds.
+  path: Assets/1 - Images/0 - Sprite Sheets/0 - Player/SpriteSheet - Clothes.psd
+  artifactKey: Guid(571b992123bae3440b9533d49f39eb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/1 - Images/0 - Sprite Sheets/0 - Player/SpriteSheet - Clothes.psd using Guid(571b992123bae3440b9533d49f39eb6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4ff2fac709356494a5d05bde6bfa952') in 0.021268 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 25.566426 seconds.
+  path: Assets/Resources/Equipments/Glasses_01 (Black Glasses) 1.asset
+  artifactKey: Guid(d54032dbf362a404a8879fb5f360169a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Equipments/Glasses_01 (Black Glasses) 1.asset using Guid(d54032dbf362a404a8879fb5f360169a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e83c35ac717a075ff35905fa3d31d056') in 0.007621 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.538175 seconds.
+  path: Assets/Resources/Equipments/Glasses_01 (Black Glasses) 2.asset
+  artifactKey: Guid(9d6b1918a4db8d34285272cde32cd3ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Equipments/Glasses_01 (Black Glasses) 2.asset using Guid(9d6b1918a4db8d34285272cde32cd3ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '190586f91c86bd6d9bc86fdb713b0dc0') in 0.007171 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.140433 seconds.
+  path: Assets/Resources/Equipments/Glasses_01 (Blue Glasses).asset
+  artifactKey: Guid(9d6b1918a4db8d34285272cde32cd3ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Equipments/Glasses_01 (Blue Glasses).asset using Guid(9d6b1918a4db8d34285272cde32cd3ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17f3398d3ff8b41e650e190236b4b31f') in 0.006581 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.420201 seconds.
+  path: Assets/Resources/Equipments/Glasses_01 (Black Glasses) 1.asset
+  artifactKey: Guid(d54032dbf362a404a8879fb5f360169a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Equipments/Glasses_01 (Black Glasses) 1.asset using Guid(d54032dbf362a404a8879fb5f360169a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fa519b6a2ba67d1a6773e937421c440') in 0.003697 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.486043 seconds.
+  path: Assets/Resources/Equipments/Glasses_01 (Red Glasses).asset
+  artifactKey: Guid(d54032dbf362a404a8879fb5f360169a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/Equipments/Glasses_01 (Red Glasses).asset using Guid(d54032dbf362a404a8879fb5f360169a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '393886f72612d52d1894bfb15d84b2ab') in 0.006073 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.915584 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black
+  artifactKey: Guid(39a8f4cfae8c9b94985369178d9e97de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black using Guid(39a8f4cfae8c9b94985369178d9e97de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd8c9db04f27c0c2d281382114f7feb2') in 0.005346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.031188 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black 1
+  artifactKey: Guid(596f9d62dff4b3446871644b48787fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black 1 using Guid(596f9d62dff4b3446871644b48787fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63764f20be2bf2faf3d0a8b2d28ef1c1') in 0.005273 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.968828 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black 2
+  artifactKey: Guid(5e09133f422be9c4ca8363e82f25333b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black 2 using Guid(5e09133f422be9c4ca8363e82f25333b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4aaa54ef07cc629b866bdaf3f828b9b8') in 0.005545 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.981044 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue
+  artifactKey: Guid(5e09133f422be9c4ca8363e82f25333b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue using Guid(5e09133f422be9c4ca8363e82f25333b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d25f18176bd1ecbfea33493eb59b18f') in 0.005102 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.238559 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red
+  artifactKey: Guid(596f9d62dff4b3446871644b48787fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red using Guid(596f9d62dff4b3446871644b48787fb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf6950970c1101e8e73adda1021ac277') in 0.006678 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.841895 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Animator.controller
+  artifactKey: Guid(ae215534862983345963729d0983426c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Animator.controller using Guid(ae215534862983345963729d0983426c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '456806ccf10876f3ec9c67d07c43ddbc') in 0.006465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.052783 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Down.anim
+  artifactKey: Guid(6385760afa3aa314880275516e9ad294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Down.anim using Guid(6385760afa3aa314880275516e9ad294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd717604b84bd32703bcc9660836ee11') in 0.005836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.468299 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Side.anim
+  artifactKey: Guid(903949d1e9a548d42bb6a046cd9377e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Side.anim using Guid(903949d1e9a548d42bb6a046cd9377e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c93825058ac7bceb268b8d4ae9557c8b') in 0.007808 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.956078 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Up.anim
+  artifactKey: Guid(ae95e28f18ae12745aa9e9cbaa6e4907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/PlayerGlasses_Up.anim using Guid(ae95e28f18ae12745aa9e9cbaa6e4907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89c29a5152c517216e0eed20838c0f8c') in 0.005960 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.800504 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Animator.controller
+  artifactKey: Guid(5f1a1d674678a2c45abf94e6bba8b48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Animator.controller using Guid(5f1a1d674678a2c45abf94e6bba8b48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a209b565813fe94680da03f777fe0e01') in 0.006409 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.096866 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/PlayerGlasses_Down.anim
+  artifactKey: Guid(26ef99569e6b79f4482d6562bd8d223a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/PlayerGlasses_Down.anim using Guid(26ef99569e6b79f4482d6562bd8d223a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26991f1870c4e5dc5cbd21ebd1c3cd5a') in 0.002851 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.639373 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Down.anim
+  artifactKey: Guid(26ef99569e6b79f4482d6562bd8d223a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Down.anim using Guid(26ef99569e6b79f4482d6562bd8d223a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e29037c83f7fa992df6e91229f861a') in 0.005445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.823662 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/PlayerGlasses_Side.anim
+  artifactKey: Guid(7c2ae41f5ea813c4a9223b263cc701bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/PlayerGlasses_Side.anim using Guid(7c2ae41f5ea813c4a9223b263cc701bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0aa68962ec8b76dd9047d513ecaab1c') in 0.002719 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.735724 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Side.anim
+  artifactKey: Guid(7c2ae41f5ea813c4a9223b263cc701bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Side.anim using Guid(7c2ae41f5ea813c4a9223b263cc701bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2bae3f5143693e7c53abfed131b3222') in 0.006208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.394892 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/PlayerGlasses_Up.anim
+  artifactKey: Guid(e79573165178eb344b3844bdfc72734f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/PlayerGlasses_Up.anim using Guid(e79573165178eb344b3844bdfc72734f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00af256c1fac583d5a2052fed9872913') in 0.003088 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.821384 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Up.anim
+  artifactKey: Guid(e79573165178eb344b3844bdfc72734f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Black/Glasses_Black_Up.anim using Guid(e79573165178eb344b3844bdfc72734f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a2b8ee135a8c64b29b8d5c1779f3d66') in 0.005650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 34.115896 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Animator.controller
+  artifactKey: Guid(ae215534862983345963729d0983426c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Animator.controller using Guid(ae215534862983345963729d0983426c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b40f0d75b6e84090c65d9009e2db6c6') in 0.006359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.134660 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Down.anim
+  artifactKey: Guid(6385760afa3aa314880275516e9ad294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Down.anim using Guid(6385760afa3aa314880275516e9ad294) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a6454280997132c252696d83a404996') in 0.006789 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.911841 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Side.anim
+  artifactKey: Guid(903949d1e9a548d42bb6a046cd9377e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Side.anim using Guid(903949d1e9a548d42bb6a046cd9377e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '618fa2458120606558e075c5475f6020') in 0.005590 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.594566 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Up.anim
+  artifactKey: Guid(ae95e28f18ae12745aa9e9cbaa6e4907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Blue/Glasses_Blue_Up.anim using Guid(ae95e28f18ae12745aa9e9cbaa6e4907) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cad26aca995b86f65aadde17f32f77b') in 0.006231 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.173166 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Animator.controller
+  artifactKey: Guid(6464e14be029a5641a5be1d35946424b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Animator.controller using Guid(6464e14be029a5641a5be1d35946424b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98a152dab3d171e29ba8e0a8f1f67c77') in 0.003348 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.588987 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Animator.controller
+  artifactKey: Guid(6464e14be029a5641a5be1d35946424b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Animator.controller using Guid(6464e14be029a5641a5be1d35946424b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65ae15a94e2b5d51cfc0e60c854707cb') in 0.006185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.622619 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Down.anim
+  artifactKey: Guid(f8ba4e534de2d3c48b72cac7cab8782a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Down.anim using Guid(f8ba4e534de2d3c48b72cac7cab8782a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e8e0c640bde32c339be0af4ca623350') in 0.002549 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.219887 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Down.anim
+  artifactKey: Guid(f8ba4e534de2d3c48b72cac7cab8782a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Down.anim using Guid(f8ba4e534de2d3c48b72cac7cab8782a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '068cd63c8dd23d20ea5005973c7c9b5d') in 0.005359 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.785602 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Side.anim
+  artifactKey: Guid(60dc311b0eecc7e438eadfbc6ac717d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Side.anim using Guid(60dc311b0eecc7e438eadfbc6ac717d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace14890ef414ace34b2489479784b9f') in 0.003166 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.654827 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Side.anim
+  artifactKey: Guid(60dc311b0eecc7e438eadfbc6ac717d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Side.anim using Guid(60dc311b0eecc7e438eadfbc6ac717d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cd2ced002c2fe32f4f522d2eca967d5') in 0.006561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.891642 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Up.anim
+  artifactKey: Guid(700610f7b22648047b135e4255a872ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/PlayerGlasses_Up.anim using Guid(700610f7b22648047b135e4255a872ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0db13a3aa118bcf8149465c7dab67e38') in 0.002676 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.760954 seconds.
+  path: Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Up.anim
+  artifactKey: Guid(700610f7b22648047b135e4255a872ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2 - Animators & Anims/0 - Player/Glasses/Red/Glasses_Red_Up.anim using Guid(700610f7b22648047b135e4255a872ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e39b11af083ba2d4841f856b1a0b2a41') in 0.006318 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004661 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\- Leonardo Fraga Games\Projects\Little-Sim-Neightborhood\LittleSimNeightborhood\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\- Leonardo Fraga Games\Projects\Little-Sim-Neightborhood\LittleSimNeightborhood\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.934 seconds
+Domain Reload Profiling:
+	ReloadAssembly (935ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (7ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (37ms)
+		EndReloadAssembly (782ms)
+			LoadAssemblies (82ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (271ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (36ms)
+			SetupLoadedEditorAssemblies (286ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (73ms)
+				ProcessInitializeOnLoadAttributes (196ms)
+				ProcessInitializeOnLoadMethodAttributes (8ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (19ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4901 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 210.2 MB.
+System memory in use after: 210.1 MB.
+
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 6105.
+Total: 6.871000 ms (FindLiveObjects: 0.896300 ms CreateObjectMapping: 0.409500 ms MarkObjects: 5.272500 ms  DeleteObjects: 0.291900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004172 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\- Leonardo Fraga Games\Projects\Little-Sim-Neightborhood\LittleSimNeightborhood\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\- Leonardo Fraga Games\Projects\Little-Sim-Neightborhood\LittleSimNeightborhood\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.883 seconds
+Domain Reload Profiling:
+	ReloadAssembly (884ms)
+		BeginReloadAssembly (109ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (729ms)
+			LoadAssemblies (79ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (255ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (34ms)
+			SetupLoadedEditorAssemblies (257ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (64ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (7ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.87 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4901 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 210.4 MB.
+System memory in use after: 210.3 MB.
+
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 6108.
+Total: 3.841000 ms (FindLiveObjects: 0.393700 ms CreateObjectMapping: 0.206900 ms MarkObjects: 3.049600 ms  DeleteObjects: 0.190300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004332 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\- Leonardo Fraga Games\Projects\Little-Sim-Neightborhood\LittleSimNeightborhood\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\- Leonardo Fraga Games\Projects\Little-Sim-Neightborhood\LittleSimNeightborhood\Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.88 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.889 seconds
+Domain Reload Profiling:
+	ReloadAssembly (889ms)
+		BeginReloadAssembly (110ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (733ms)
+			LoadAssemblies (72ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (250ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (266ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (3ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (67ms)
+				ProcessInitializeOnLoadAttributes (175ms)
+				ProcessInitializeOnLoadMethodAttributes (11ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.85 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4901 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 210.4 MB.
+System memory in use after: 210.3 MB.
+
+Unloading 30 unused Assets to reduce memory usage. Loaded Objects now: 6111.
+Total: 4.143100 ms (FindLiveObjects: 0.511800 ms CreateObjectMapping: 0.214000 ms MarkObjects: 3.133100 ms  DeleteObjects: 0.283600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

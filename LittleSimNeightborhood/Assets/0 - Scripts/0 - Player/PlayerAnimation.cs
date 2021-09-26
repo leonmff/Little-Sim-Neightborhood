@@ -7,7 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     protected PlayerMovement _playerMovement;
     protected Animator _anim;
 
-    protected void Awake()
+    protected virtual void Awake()
     {
         _playerMovement = GetComponent<PlayerMovement>();
         if (!_playerMovement)
@@ -24,9 +24,18 @@ public class PlayerAnimation : MonoBehaviour
             return;
 
         if (_playerMovement.Direction != Vector2.zero)
-        {
-            _anim.SetFloat("Horizontal", _playerMovement.Direction.x);
-            _anim.SetFloat("Vertical", _playerMovement.Direction.y);
-        }
+            SetAnimationParameters();
+    }
+
+    void SetAnimationParameters()
+    {
+        _anim.SetFloat("Horizontal", _playerMovement.Direction.x);
+        _anim.SetFloat("Vertical", _playerMovement.Direction.y);
+    }
+
+    protected void SetAnimationParameters(Vector2 pDirection)
+    {
+        _anim.SetFloat("Horizontal", pDirection.x);
+        _anim.SetFloat("Vertical", pDirection.y);
     }
 }
