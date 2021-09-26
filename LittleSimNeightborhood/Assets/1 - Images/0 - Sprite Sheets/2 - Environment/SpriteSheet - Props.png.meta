@@ -259,7 +259,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet - Props_9
+      name: Door Closed
       rect:
         serializedVersion: 2
         x: 29
@@ -427,7 +427,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet - Props_22
+      name: Door Open
       rect:
         serializedVersion: 2
         x: 29

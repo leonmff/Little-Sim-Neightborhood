@@ -14,6 +14,30 @@ TextureImporter:
   - first:
       213: 7199175234556080859
     second: Player - Shadow
+  - first:
+      213: 4481790659547792480
+    second: NPC 01 - Back
+  - first:
+      213: 2162697991303128620
+    second: NPC 01 - Front
+  - first:
+      213: 4616984812415962707
+    second: NPC 01 - Side
+  - first:
+      213: -8149004071989816440
+    second: NPC 01 - Shadow
+  - first:
+      213: -3485542667123585582
+    second: NPC 02 - Back
+  - first:
+      213: 7565156431443073821
+    second: NPC 02 - Front
+  - first:
+      213: -8705091388853804819
+    second: NPC 02 - Side
+  - first:
+      213: 3595194931403651562
+    second: NPC 02 - Shadow
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -91,12 +115,12 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -107,7 +131,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 6
-        y: 70
+        y: 198
         width: 21
         height: 48
       alignment: 7
@@ -128,7 +152,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 38
-        y: 70
+        y: 198
         width: 21
         height: 48
       alignment: 7
@@ -149,7 +173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 69
-        y: 70
+        y: 198
         width: 21
         height: 48
       alignment: 7
@@ -170,7 +194,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 99
-        y: 68
+        y: 196
         width: 27
         height: 28
       alignment: 7
@@ -182,6 +206,174 @@ TextureImporter:
       bones: []
       spriteID: bd23183abbb98e360800000000000000
       internalID: 7199175234556080859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 01 - Back
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 198
+        width: 21
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 064820cfbd4823e30800000000000000
+      internalID: 4481790659547792480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 01 - Front
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 198
+        width: 21
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 30}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c26e2185d52730e10800000000000000
+      internalID: 2162697991303128620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 01 - Side
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 198
+        width: 21
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e4d6d9933d21040800000000000000
+      internalID: 4616984812415962707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 01 - Shadow
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 196
+        width: 27
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 883d5d7c8fbe8ee80800000000000000
+      internalID: -8149004071989816440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02 - Back
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 134
+        width: 21
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd81a4596dd0afc0800000000000000
+      internalID: -3485542667123585582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02 - Front
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 134
+        width: 21
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b1d6641b5dcf860800000000000000
+      internalID: 7565156431443073821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02 - Side
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 134
+        width: 21
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 31}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0ae0ed08d413780800000000000000
+      internalID: -8705091388853804819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NPC 02 - Shadow
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 132
+        width: 27
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae97990fdb2b4e130800000000000000
+      internalID: 3595194931403651562
       vertices: []
       indices: 
       edges: []
