@@ -1,9 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInputController : MonoBehaviour
 {
+    [System.Serializable]
+    public struct InputPermissions
+    {
+        public bool CanMove;
+        public bool CanJump;
+        public bool CanInteract;
+        public bool CanDoAction;
+        public bool CanOpenCloseMenus;
+        public bool CanGetInput;
+    }
+
     [SerializeField]
     bool _getAxisRaw = false;
 
@@ -15,22 +27,41 @@ public class PlayerInputController : MonoBehaviour
     float _inputY = 0f;
 
     [SerializeField, InspectorReadOnly, Header("Debug Variables")]
-    bool _canMove;
-    [SerializeField, InspectorReadOnly]
-    bool _canJump;
-    [SerializeField, InspectorReadOnly]
-    bool _canInteract;
+    InputPermissions _currentPermissions;
+    [SerializeField]
+    InputPermissions _previousPermissions;
+
+    //bool _canMove;
+    //[SerializeField, InspectorReadOnly]
+    //bool _canJump;
+    //[SerializeField, InspectorReadOnly]
+    //bool _canInteract;
+    //[SerializeField, InspectorReadOnly]
+    //bool _canOpenCloseMenus;
+    //[SerializeField, InspectorReadOnly]
+    //bool _canGetInput;
 
     private void Start()
     {
-        _canMove = true;
-        _canJump = true;
-        _canInteract = true;
+        EnableAll();
+        SaveOnPreviousPermissions();
+    }
+
+    private void OnEnable()
+    {
+        CanvasManager.OnOpenMenu += DisableAllKeepInventory;
+        CanvasManager.OnCloseMenu += RestorePreviousPermissions;
+    }
+
+    private void OnDisable()
+    {
+        CanvasManager.OnOpenMenu -= DisableAllKeepInventory;
+        CanvasManager.OnCloseMenu -= RestorePreviousPermissions;
     }
 
     public bool GetInputHorizontal(ref float pInputX)
     {
-        if (!_canMove)
+        if (!_currentPermissions.CanMove || !_currentPermissions.CanGetInput)
         {
             pInputX = 0f;
             _inputX = pInputX;
@@ -44,7 +75,7 @@ public class PlayerInputController : MonoBehaviour
 
     public bool GetInputVertical(ref float pInputY)
     {
-        if (!_canMove)
+        if (!_currentPermissions.CanMove || !_currentPermissions.CanGetInput)
         {
             pInputY = 0f;
             _inputY = pInputY;
@@ -58,7 +89,7 @@ public class PlayerInputController : MonoBehaviour
 
     public bool GetInputHorizontalVertical(ref Vector2 pInputXY)
     {
-        if (!_canMove)
+        if (!_currentPermissions.CanMove || !_currentPermissions.CanGetInput)
         {
             pInputXY = Vector2.zero;
             _inputXY = pInputXY;
@@ -74,7 +105,7 @@ public class PlayerInputController : MonoBehaviour
 
     public bool GetInputJump()
     {
-        if (!_canJump)
+        if (!_currentPermissions.CanJump || !_currentPermissions.CanGetInput)
             return false;
 
         return Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.Space);
@@ -82,7 +113,7 @@ public class PlayerInputController : MonoBehaviour
 
     public bool GetInputInteract()
     {
-        if (!_canInteract)
+        if (!_currentPermissions.CanInteract || !_currentPermissions.CanGetInput)
             return false;
 
         return Input.GetButtonDown("Interact") || Input.GetKeyDown(KeyCode.E);
@@ -90,43 +121,69 @@ public class PlayerInputController : MonoBehaviour
 
     public bool GetInputFire()
     {
-        if (!_canInteract)
-            return false;
+        //if (!_currentPermissions.CanDoAction || !_currentPermissions.CanGetInput)
+         //   return false;
 
         return Input.GetButtonDown("Fire1") || Input.GetMouseButtonDown(0);
     }
 
+    public bool GetInputInventory()
+    {
+        if (!_currentPermissions.CanOpenCloseMenus || !_currentPermissions.CanGetInput)
+            return false;
+
+        return Input.GetButtonDown("Inventory") || Input.GetKeyDown(KeyCode.I);
+    }
+
     public void DisableMovement()
     {
-        _canMove = false;
-        _canJump = false;
+        _currentPermissions.CanMove = false;
+        _currentPermissions.CanJump = false;
     }
 
     public void EnableMovement()
     {
-        _canMove = true;
-        _canJump = true;
+        _currentPermissions.CanMove = true;
+        _currentPermissions.CanJump = true;
     }
 
-    public void DisableInteractions()
+    public void DisableAllKeepInventory()
     {
-        _canInteract = false;
-    }
+        SaveOnPreviousPermissions();
 
-    public void EnableInteractions()
-    {
-        _canInteract = true;
-    }
-
-    public void DisableInputs()
-    {
         DisableMovement();
-        DisableInteractions();
+        _currentPermissions.CanInteract = false;
+        _currentPermissions.CanDoAction = false;
+        _currentPermissions.CanInteract = false;
     }
 
-    public void EnableInputs()
+    public void EnableAll()
     {
-        EnableMovement();
-        EnableInteractions();
+        _currentPermissions.CanMove = true;
+        _currentPermissions.CanJump = true;
+        _currentPermissions.CanInteract = true;
+        _currentPermissions.CanDoAction = true;
+        _currentPermissions.CanOpenCloseMenus = true;
+        _currentPermissions.CanGetInput = true;
+    }
+
+    public void DisableInput()
+    {
+        _currentPermissions.CanGetInput = false;
+    }
+
+    public void EnableInput()
+    {
+        _currentPermissions.CanGetInput = true;
+    }
+
+    void SaveOnPreviousPermissions()
+    {
+        _previousPermissions = _currentPermissions;
+    }
+
+    void RestorePreviousPermissions()
+    {
+        _currentPermissions = _previousPermissions;
     }
 }

@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SOItem : ScriptableObject
+[System.Serializable]
+public class ItemOld : MonoBehaviour
 {
     public PlayerEquipment.EquipType Type;
+    public bool Stackable;
 
     [Space(7)]
     public string Name;
-    public bool Stackable;
+    public int Price;
+
+    [Space(7)]
     public Sprite Icon;
     public Sprite Background;
-    public int Price;
 }

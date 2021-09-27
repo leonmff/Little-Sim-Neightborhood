@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be8ec1d2dcf078645ae0f976df3a2d26, type: 3}
-  m_Name: Belt_02 (Dark 01)
+  m_Name: Belt_03 (BowTie)
   m_EditorClassIdentifier: 
-  Name: Dark Belt
-  Price: 100
   Type: 1
-  Animator: {fileID: 9100000, guid: c60a693a10c5a2c4bb540c108259037f, type: 2}
+  Stackable: 0
+  Name: Bow Tie
+  Price: 200
+  Icon: {fileID: 2303310828850320514, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
+  Background: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
+  Animator: {fileID: 9100000, guid: 89ee000000e07de498eae4bb9b104bc5, type: 2}

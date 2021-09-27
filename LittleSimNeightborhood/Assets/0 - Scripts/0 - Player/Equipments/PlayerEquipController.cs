@@ -30,13 +30,13 @@ public class PlayerEquipController : MonoBehaviour
 
     private void EquipBelt(int pIndex)
     {
-        SOEquipment[] t_equipmentsBelts = Resources.LoadAll<SOEquipment>("Equipments/Belts");
-        _equipBelts.Equip(t_equipmentsBelts[pIndex].Type, t_equipmentsBelts[pIndex].Animator);
+        SOClothOld[] t_equipmentsBelts = Resources.LoadAll<SOClothOld>("Clothes/Belts");
+        //_equipBelts.Equip(t_equipmentsBelts[pIndex].Type, t_equipmentsBelts[pIndex].Animator);
     }
 
     void EquipGlass(int pIndex)
     {
-        SOEquipment[] t_equipmentsGlasses = Resources.LoadAll<SOEquipment>("Equipments/Glasses");
-        _equipGlasses.Equip(t_equipmentsGlasses[pIndex].Type, t_equipmentsGlasses[pIndex].Animator);
+        SOClothOld[] t_equipmentsGlasses = Resources.LoadAll<SOClothOld>("Clothes/Glasses");
+        //_equipGlasses.Equip(t_equipmentsGlasses[pIndex].Type, t_equipmentsGlasses[pIndex].Animator);
     }
 }
