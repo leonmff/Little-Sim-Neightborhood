@@ -17,6 +17,7 @@ MonoBehaviour:
   EncryptSaveFiles: 1
   AutoLoadOnAwake: 1
   AutoSaveOnInventory: 1
+  ConstantAllowedItems: 0
   DefaultInventorySize: 35
   Container:
     ListItems:

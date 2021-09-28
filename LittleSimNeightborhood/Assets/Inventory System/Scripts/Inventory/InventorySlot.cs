@@ -11,6 +11,7 @@ namespace InventorySystem
         [System.NonSerialized]
         public InventoryController Parent;
 
+
         public Item Item;
         public int Quantity;
 
@@ -19,9 +20,7 @@ namespace InventorySystem
             get
             {
                 if (Item.Id >= 0)
-                {
-                    return Parent.Database.GetItem(Item.Id);
-                }
+                    return Parent.Database.ListItems[Item.Id];
 
                 return null;
             }

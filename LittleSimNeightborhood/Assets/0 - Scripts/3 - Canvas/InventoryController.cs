@@ -28,10 +28,7 @@ namespace InventorySystem
 
         Image _imgDragItem;
 
-        protected void Awake()
-        {
-            _imgDragItem = MouseData.RectTransform.GetComponent<Image>();
-        }
+        protected void Awake() => _imgDragItem = MouseData.RectTransform.GetComponent<Image>();
 
         public void InitializeSlots()
         {
@@ -44,9 +41,7 @@ namespace InventorySystem
 
                 InventorySlotInformations t_inventorySlot = t_objButton.GetComponent<InventorySlotInformations>();
                 if (t_inventorySlot)
-                {
                     _listInventorySlots.Add(t_inventorySlot);
-                }
 
                 AddEvent(t_objButton, EventTriggerType.PointerEnter, delegate { OnEnter(t_objButton); });
                 AddEvent(t_objButton, EventTriggerType.PointerExit, delegate { OnExit(t_objButton); });
@@ -74,7 +69,7 @@ namespace InventorySystem
                     if (t_inventorySlot.Item.Id <= -1)
                         continue;
 
-                    SOItem t_item = _soDatabase.GetItem(t_inventorySlot.Item.Id);
+                    SOItem t_item = _soDatabase.ListItems[t_inventorySlot.Item.Id];
                     _listInventorySlots[index].UpdateValues(t_item.UIBackground, t_item.UIIcon, t_inventorySlot.Quantity, t_item.Stackable);
                 }
             }
@@ -86,7 +81,7 @@ namespace InventorySystem
             {
                 if (t_slot.Value.Item.Id >= 0)
                 {
-                    SOItem t_soItem = t_slot.Value.SOItem; //_soDatabase.ListItems[t_slot.Value.Item.Id];
+                    SOItem t_soItem = t_slot.Value.SOItem; 
                     InventorySlotInformations t_inventorySlotInfo = t_slot.Key.GetComponent<InventorySlotInformations>();
 
                     t_inventorySlotInfo.UpdateValues(t_soItem.UIBackground, t_soItem.UIIcon, t_slot.Value.Quantity, t_soItem.Stackable);
@@ -134,23 +129,6 @@ namespace InventorySystem
 
         protected IEnumerator CoDragEnd(GameObject pObject)
         {
-            //var itemOnMouse = _mouseItemControl.MouseItem;
-            //var mouseHoverItem = itemOnMouse.InventorySlotHovered;
-            //var mouseHoverObj = itemOnMouse.SlotHovered;
-
-            //if (mouseHoverObj)
-            //{
-            //    if (mouseHoverItem.CanPlaceInSlot(_soInventory.database.GetItem(_dicInventorySlots[pObject].ID)) && (mouseHoverItem.Item.Id <= -1 || (mouseHoverItem.Item.Id >= 0 && _dicInventorySlots[pObject].CanPlaceInSlot(_soInventory.database.GetItem(mouseHoverItem.Item.Id)))))
-            //        _soInventory.SwapItem(_dicInventorySlots[pObject], mouseHoverItem.Parent._dicInventorySlots[mouseHoverObj]);
-            //}
-            //else
-            //{
-            //    yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation("The item will be destroyed."));
-
-            //    if (ConfirmationWindow.instance.Confirmed)
-            //        _soInventory.RemoveItem(_dicInventorySlots[pObject].Item);
-            //}
-
             if (!MouseData.SlotHovered)
             {
                 yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation("The item will be destroyed."));
@@ -160,19 +138,12 @@ namespace InventorySystem
             }
             else
             {
-                bool t_canReplace = MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.GetItem(_dicInventorySlots[pObject].Item.Id));
+                bool t_canReplace = MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.ListItems[_dicInventorySlots[pObject].Item.Id]);
                 bool t_hasEmptyID = MouseData.InventorySlotHovered.Item.Id <= -1;
                 bool t_idOcupied = MouseData.InventorySlotHovered.Item.Id >= 0;
-                //bool t_canReplaceInverse = _dicInventorySlots[pObject].CanPlaceInSlot(_soInventory.database.GetItem(MouseData.InventorySlotHovered.Item.Id));
-                
-                if (t_canReplace && (t_hasEmptyID || (t_idOcupied)))// && t_canReplaceInverse)))
+
+                if (t_canReplace && (t_hasEmptyID || t_idOcupied))
                     _soInventory.SwapItem(_dicInventorySlots[pObject], MouseData.InventorySlotHovered.Parent._dicInventorySlots[MouseData.SlotHovered]);
-
-                //if (MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.GetItem(_dicInventorySlots[pObject].ID)) && (mouseHoverItem.Item.Id <= -1 || (mouseHoverItem.Item.Id >= 0 && _dicInventorySlots[pObject].CanPlaceInSlot(_soInventory.database.GetItem(mouseHoverItem.Item.Id)))))
-                //    _soInventory.SwapItem(_dicInventorySlots[pObject], mouseHoverItem.Parent._dicInventorySlots[mouseHoverObj]);
-
-                //InventorySlot t_inventorySlotHovered = MouseData.InventoryControl._dicInventorySlots[MouseData.SlotHovered];
-                //_soInventory.SwapItem(_dicInventorySlots[pObject], t_inventorySlotHovered);
             }
 
             _imgDragItem.sprite = null;
@@ -187,8 +158,6 @@ namespace InventorySystem
         {
             MouseData.SlotHovered = null;
             MouseData.InventorySlotHovered = null;
-            //_mouseItemControl.MouseItem.SlotHovered = null;
-            //_mouseItemControl.MouseItem.InventorySlotHovered = null;
         }
 
         protected void AddEvent(GameObject pObject, EventTriggerType pTriggerType, UnityAction<BaseEventData> pAction)

@@ -9,10 +9,5 @@ namespace InventorySystem
     {
         [Space(15), Header("Item Specific Fields")]
         public RuntimeAnimatorController Animator;
-
-        private void Awake()
-        {
-            Type = ItemType.Glasses;
-        }
     }
 }

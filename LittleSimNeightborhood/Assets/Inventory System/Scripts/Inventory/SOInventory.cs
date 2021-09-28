@@ -112,12 +112,19 @@ namespace InventorySystem
 
         void InitializeInventorySlots()
         {
+            List<InventorySlot> t_tempListInventorySlots = null;
+            if (ConstantAllowedItems)
+                t_tempListInventorySlots = new List<InventorySlot>(Container.ListItems);
+
             Container.ListItems = new List<InventorySlot>();
 
             for (int index = 0; index < DefaultInventorySize; index++)
             {
                 InventorySlot t_inventorySlot = new InventorySlot();
-                //t_inventorySlot.Item.Id = -1;
+                t_inventorySlot.Item.Id = -1;
+
+                if (ConstantAllowedItems && t_tempListInventorySlots.Count > index)
+                    t_inventorySlot.AllowedItems = t_tempListInventorySlots[index].AllowedItems;
 
                 Container.ListItems.Add(t_inventorySlot);
             }
@@ -179,7 +186,9 @@ namespace InventorySystem
                 InventorySlot t_inventorySlot = Container.ListItems[index];
 
                 if (!ConstantAllowedItems)
+                {
                     t_inventorySlot = t_newContainer.ListItems[index];
+                }
                 else
                 {
                     t_inventorySlot.Parent = t_newContainer.ListItems[index].Parent;

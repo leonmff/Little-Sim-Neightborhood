@@ -9,22 +9,14 @@ namespace InventorySystem
     {
         public SOItem[] ListItems;
 
-        Dictionary<int, SOItem> _dicItems = new Dictionary<int, SOItem>();
-
-        public SOItem GetItem(int pId) => _dicItems[pId];
-
         public void OnAfterDeserialize()
         {
             for (int index = 0; index < ListItems.Length; index++)
             {
                 ListItems[index].Data.Id = index;
-                _dicItems.Add(index, ListItems[index]);
             }
         }
 
-        public void OnBeforeSerialize()
-        {
-            _dicItems = new Dictionary<int, SOItem>();
-        }
+        public void OnBeforeSerialize(){}
     }
 }
