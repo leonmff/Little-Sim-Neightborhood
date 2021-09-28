@@ -20,16 +20,16 @@ MonoBehaviour:
   ConstantAllowedItems: 1
   DefaultInventorySize: 2
   Container:
-    ListItems:
+    ListInventorySlots:
     - AllowedItems: 00000000
       Item:
-        _name: 
-        Id: -1
+        _name: Black SunGlasito
+        Id: 0
         _stackable: 0
-      Quantity: 0
+      Quantity: 1
     - AllowedItems: 01000000
       Item:
-        _name: 
-        Id: -1
-        _stackable: 0
-      Quantity: 0
+        _name: Bow Tie
+        Id: 5
+        _stackable: 1
+      Quantity: 1

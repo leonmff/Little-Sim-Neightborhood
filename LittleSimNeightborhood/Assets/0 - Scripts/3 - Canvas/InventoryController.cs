@@ -49,7 +49,8 @@ namespace InventorySystem
                 AddEvent(t_objButton, EventTriggerType.EndDrag, delegate { OnDragEnd(t_objButton); });
                 AddEvent(t_objButton, EventTriggerType.Drag, delegate { OnDrag(t_objButton); });
 
-                _dicInventorySlots.Add(t_objButton, _soInventory.Container.ListItems[index]);
+                _soInventory.ListInventorySlots[index].SlotDisplay = t_objButton;
+                _dicInventorySlots.Add(t_objButton, _soInventory.Container.ListInventorySlots[index]);
             }
 
             LoadInventory();
@@ -59,12 +60,13 @@ namespace InventorySystem
 
         protected void LoadInventory()
         {
-            for (int index = 0; index < _soInventory.Container.ListItems.Count; index++)
+            for (int index = 0; index < _soInventory.Container.ListInventorySlots.Count; index++)
             {
                 if (index < _listInventorySlots.Count)
                 {
-                    InventorySlot t_inventorySlot = _soInventory.Container.ListItems[index];
+                    InventorySlot t_inventorySlot = _soInventory.Container.ListInventorySlots[index];
                     t_inventorySlot.Parent = (InventoryController)this;
+                    t_inventorySlot.OnAfterUpdate += SlotUpdate;
 
                     if (t_inventorySlot.Item.Id <= -1)
                         continue;
@@ -73,6 +75,25 @@ namespace InventorySystem
                     _listInventorySlots[index].UpdateValues(t_item.UIBackground, t_item.UIIcon, t_inventorySlot.Quantity, t_item.Stackable);
                 }
             }
+        }
+
+        void SlotUpdate(InventorySlot pSlot)
+        {
+            if (pSlot.Item.Id >= 0)
+            {
+                SOItem t_soItem = pSlot.SOItem;
+                InventorySlotInformations t_inventorySlotInfo = pSlot.SlotDisplay.GetComponent<InventorySlotInformations>();
+
+                t_inventorySlotInfo.UpdateValues(t_soItem.UIBackground, t_soItem.UIIcon, pSlot.Quantity, t_soItem.Stackable);
+            }
+            else
+            {
+                InventorySlotInformations t_inventorySlotInfo = pSlot.SlotDisplay.GetComponent<InventorySlotInformations>();
+                t_inventorySlotInfo.Clear();
+            }
+
+            if (_soInventory.AutoSaveOnInventory)
+                _soInventory.Save();
         }
 
         public void UpdateInventoryInformation()
@@ -149,7 +170,7 @@ namespace InventorySystem
             _imgDragItem.sprite = null;
             _imgDragItem.color = Color.clear;
 
-            UpdateInventoryInformation();
+            //UpdateInventoryInformation();
 
             yield return null;
         }

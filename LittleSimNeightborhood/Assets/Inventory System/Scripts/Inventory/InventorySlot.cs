@@ -3,6 +3,8 @@ using UnityEngine;
 
 namespace InventorySystem
 {
+    public delegate void SlotUpdated(InventorySlot pInventorySlot);
+
     [System.Serializable]
     public class InventorySlot
     {
@@ -11,6 +13,13 @@ namespace InventorySystem
         [System.NonSerialized]
         public InventoryController Parent;
 
+        [System.NonSerialized]
+        public GameObject SlotDisplay;
+
+        [System.NonSerialized]
+        public SlotUpdated OnBeforeUpdate;
+        [System.NonSerialized]
+        public SlotUpdated OnAfterUpdate;
 
         public Item Item;
         public int Quantity;
@@ -26,37 +35,26 @@ namespace InventorySystem
             }
         }
 
-        public InventorySlot()
-        {
-            Item = new Item();
-            Quantity = 0;
-        }
+        public InventorySlot() => UpdateSlot(new Item(), 0);
 
-        public InventorySlot(Item pItem, int pQuantity)
-        {
-            Item = pItem;
-            Quantity = pQuantity;
-        }
+        public InventorySlot(Item pItem, int pQuantity) => UpdateSlot(pItem, pQuantity);
 
         public void UpdateSlot(Item pItem, int pQuantity)
         {
+            OnBeforeUpdate?.Invoke(this);
+
             Item = pItem;
             Quantity = pQuantity;
-            
-            if (Parent)
-                Parent.UpdateInventoryInformation(); 
+
+            OnAfterUpdate?.Invoke(this);
+
+            //if (Parent)
+            //    Parent.UpdateInventoryInformation(); 
         }
 
-        public void RemoveItem()
-        {
-            Item = new Item();
-            Quantity = 0;
-        }
+        public void RemoveItem() => UpdateSlot(new Item(), 0);
 
-        public void AddAmount(int pValue)
-        {
-            Quantity += pValue;
-        }
+        public void AddAmount(int pValue) => UpdateSlot(Item, Quantity += pValue);
 
         public bool CanPlaceInSlot(SOItem pSOItem)
         {
@@ -76,13 +74,13 @@ namespace InventorySystem
     [System.Serializable]
     public class Inventory 
     { 
-        public List<InventorySlot> ListItems = new List<InventorySlot>();
+        public List<InventorySlot> ListInventorySlots = new List<InventorySlot>();
 
         public void Clear()
         {
-            for (int index = 0; index < ListItems.Count; index++)
+            for (int index = 0; index < ListInventorySlots.Count; index++)
             {
-                ListItems[index].UpdateSlot(new Item(), 0);
+                ListInventorySlots[index].UpdateSlot(new Item(), 0);
             }
         }
     }
