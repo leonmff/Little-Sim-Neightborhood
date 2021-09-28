@@ -15,24 +15,21 @@ MonoBehaviour:
   _saveFileName: inventoryEquipSave.game
   database: {fileID: 11400000, guid: 26fa4dcee2cc4f741a5a5f1296b5507c, type: 2}
   EncryptSaveFiles: 1
-  AutoLoadOnAwake: 0
-  AutoSaveOnInventory: 0
+  AutoLoadOnAwake: 1
+  AutoSaveOnInventory: 1
+  ConstantAllowedItems: 1
   DefaultInventorySize: 2
   Container:
     ListItems:
-    - AllowedItems: 01000000
-      Parent: {fileID: 0}
-      ID: -1
+    - AllowedItems: 00000000
       Item:
         _name: 
-        _id: -1
+        Id: -1
         _stackable: 0
       Quantity: 0
-    - AllowedItems: 00000000
-      Parent: {fileID: 0}
-      ID: -1
+    - AllowedItems: 01000000
       Item:
         _name: 
-        _id: -1
+        Id: -1
         _stackable: 0
       Quantity: 0

@@ -24,16 +24,12 @@ namespace InventorySystem
         [SerializeField, InspectorReadOnly, Space(15)]
         List<InventorySlotInformations> _listInventorySlots;
 
-        MouseItemController _mouseItemControl;
-
         Dictionary<GameObject, InventorySlot> _dicInventorySlots;
 
         Image _imgDragItem;
 
         protected void Awake()
         {
-            _mouseItemControl = GetComponent<MouseItemController>();
-
             _imgDragItem = MouseData.RectTransform.GetComponent<Image>();
         }
 
@@ -49,7 +45,6 @@ namespace InventorySystem
                 InventorySlotInformations t_inventorySlot = t_objButton.GetComponent<InventorySlotInformations>();
                 if (t_inventorySlot)
                 {
-                    t_inventorySlot.Initialize();
                     _listInventorySlots.Add(t_inventorySlot);
                 }
 
@@ -74,7 +69,7 @@ namespace InventorySystem
                 if (index < _listInventorySlots.Count)
                 {
                     InventorySlot t_inventorySlot = _soInventory.Container.ListItems[index];
-                    t_inventorySlot.Parent = this;
+                    t_inventorySlot.Parent = (InventoryController)this;
 
                     if (t_inventorySlot.Item.Id <= -1)
                         continue;
@@ -191,7 +186,7 @@ namespace InventorySystem
         protected void OnExit(GameObject pObject)
         {
             MouseData.SlotHovered = null;
-
+            MouseData.InventorySlotHovered = null;
             //_mouseItemControl.MouseItem.SlotHovered = null;
             //_mouseItemControl.MouseItem.InventorySlotHovered = null;
         }

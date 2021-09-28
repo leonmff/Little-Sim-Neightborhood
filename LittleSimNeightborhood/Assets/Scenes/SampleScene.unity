@@ -1561,6 +1561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soInventory: {fileID: 11400000, guid: 59cebdbd27634194584adb95d7255267, type: 2}
+  _soInventoryEquip: {fileID: 11400000, guid: d8c311a4197f5534bae0ec50bb3312fc, type: 2}
 --- !u!1 &434589237
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,7 +3621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018391799140157873, guid: c68186e0c663ce54283886d124b05577, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3018391799140157873, guid: c68186e0c663ce54283886d124b05577, type: 3}
       propertyPath: m_AnchorMax.x
@@ -7628,8 +7629,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 972859349}
   - {fileID: 1538748975}
+  - {fileID: 972859349}
   m_Father: {fileID: 27642536}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7776,7 +7777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a54e8fd96de7e42a3c19c45a82d4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: b70af0d2a048a334db4c0208874073e0, type: 2}
+  Item: {fileID: 11400000, guid: b70af0d2a048a334db4c0208874073e0, type: 2}
+  _sr: {fileID: 663316394}
 --- !u!114 &1381398593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8334,7 +8336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34a54e8fd96de7e42a3c19c45a82d4c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: d27fbd0ee0ded014fbbdddcd7f1b1197, type: 2}
+  Item: {fileID: 11400000, guid: d27fbd0ee0ded014fbbdddcd7f1b1197, type: 2}
+  _sr: {fileID: 1217578052}
 --- !u!114 &1466871994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8380,7 +8383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018391799140157873, guid: c68186e0c663ce54283886d124b05577, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3018391799140157873, guid: c68186e0c663ce54283886d124b05577, type: 3}
       propertyPath: m_AnchorMax.x

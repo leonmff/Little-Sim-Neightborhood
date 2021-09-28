@@ -7,7 +7,10 @@ namespace InventorySystem
     public class InventorySlot
     {
         public ItemType[] AllowedItems = new ItemType[0];
+        
+        [System.NonSerialized]
         public InventoryController Parent;
+
         public Item Item;
         public int Quantity;
 
@@ -26,7 +29,7 @@ namespace InventorySystem
 
         public InventorySlot()
         {
-            Item = null;
+            Item = new Item();
             Quantity = 0;
         }
 
@@ -40,8 +43,9 @@ namespace InventorySystem
         {
             Item = pItem;
             Quantity = pQuantity;
-
-            Parent.UpdateInventoryInformation();
+            
+            if (Parent)
+                Parent.UpdateInventoryInformation(); 
         }
 
         public void RemoveItem()
@@ -77,9 +81,9 @@ namespace InventorySystem
 
         public void Clear()
         {
-            for (int i = 0; i < ListItems.Count; i++)
+            for (int index = 0; index < ListItems.Count; index++)
             {
-                ListItems[i].UpdateSlot(new Item(), 0);
+                ListItems[index].UpdateSlot(new Item(), 0);
             }
         }
     }

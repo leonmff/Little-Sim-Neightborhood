@@ -7,6 +7,8 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField]
     SOInventory _soInventory = null;
+    [SerializeField]
+    SOInventory _soInventoryEquip = null;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,9 +17,10 @@ public class PlayerInventory : MonoBehaviour
             GroundItem t_groundItem = collision.GetComponent<GroundItem>();
             if (t_groundItem)
             {
-                Item _item = new Item(t_groundItem.item);
-                _soInventory.AddItem(_item, 1);
-                Destroy(collision.gameObject);
+                Item t_item = new Item(t_groundItem.Item);
+
+                if (_soInventory.AddItem(t_item, 1))
+                    Destroy(collision.gameObject);
             }
         }
     }

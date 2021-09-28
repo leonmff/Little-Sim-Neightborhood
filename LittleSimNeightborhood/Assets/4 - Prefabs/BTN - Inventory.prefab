@@ -427,6 +427,7 @@ MonoBehaviour:
   _objSelected: {fileID: 2902502680388399060}
   _imgIcon: {fileID: 1600409842274018726}
   _txtQuantity: {fileID: 4337191029385207375}
+  _btn: {fileID: 6953207589649217512}
 --- !u!114 &783978505081175719
 MonoBehaviour:
   m_ObjectHideFlags: 0

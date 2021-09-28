@@ -20,6 +20,7 @@ namespace InventorySystem
         public bool EncryptSaveFiles = true;
         public bool AutoLoadOnAwake = true;
         public bool AutoSaveOnInventory = true;
+        public bool ConstantAllowedItems = false;
 
         [Space(7)]
         public int DefaultInventorySize;
@@ -175,7 +176,17 @@ namespace InventorySystem
 
             for (int index = 0; index < Container.ListItems.Count; index++)
             {
-                InventorySlot t_inventorySlot = t_newContainer.ListItems[index];
+                InventorySlot t_inventorySlot = Container.ListItems[index];
+
+                if (!ConstantAllowedItems)
+                    t_inventorySlot = t_newContainer.ListItems[index];
+                else
+                {
+                    t_inventorySlot.Parent = t_newContainer.ListItems[index].Parent;
+                    t_inventorySlot.Item = t_newContainer.ListItems[index].Item;
+                    t_inventorySlot.Quantity = t_newContainer.ListItems[index].Quantity;
+                }
+
                 Container.ListItems[index].UpdateSlot(t_inventorySlot.Item, t_inventorySlot.Quantity);
             }
 

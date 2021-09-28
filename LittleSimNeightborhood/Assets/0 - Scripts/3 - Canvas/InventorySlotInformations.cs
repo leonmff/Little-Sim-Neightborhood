@@ -15,10 +15,8 @@ public class InventorySlotInformations : MonoBehaviour
     Image _imgIcon = null;
     [SerializeField]
     TextMeshProUGUI _txtQuantity = null;
-
-    Button _btn;
-
-    public void Initialize() => _btn = GetComponent<Button>();
+    [SerializeField]
+    Button _btn = null;
 
     public void UpdateValues(Sprite pSpBackground, Sprite pSpIcon, int pQuantity, bool pStackable)
     {

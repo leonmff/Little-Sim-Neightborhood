@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: 006 - Belt - Golden
   m_EditorClassIdentifier: 
   Name: Golden Belt
-  Id: 6
   Stackable: 0
+  Data:
+    _name: 
+    Id: 6
+    _stackable: 0
   Type: 1
-  UIIcon: {fileID: 0}
+  UIIcon: {fileID: 2303310828850320514, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
   Description: 
   Animator: {fileID: 9100000, guid: 29c31a8e6f86ffa43822ac7edd59952f, type: 2}
