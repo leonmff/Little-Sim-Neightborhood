@@ -6,6 +6,7 @@ public class PlayerAnimation : MonoBehaviour
 {
     protected PlayerMovement _playerMovement;
     protected Animator _anim;
+    protected SpriteRenderer _sr;
 
     protected virtual void Awake()
     {
@@ -14,6 +15,7 @@ public class PlayerAnimation : MonoBehaviour
             _playerMovement = transform.root.GetComponent<PlayerMovement>();
 
         _anim = GetComponentInChildren<Animator>();
+        _sr = _anim.gameObject.GetComponent<SpriteRenderer>();
     }
 
     protected virtual void Update() => PlayMovementAnimation();

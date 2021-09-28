@@ -12,6 +12,7 @@ namespace InventorySystem
     {
         [SerializeField]
         SOInventory _soInventory = null;
+        public InventoryType InventoryType { get => _soInventory.TypeInventory; }
 
         [SerializeField]
         SOItemDatabase _soDatabase = null;
@@ -86,7 +87,7 @@ namespace InventorySystem
 
                 t_inventorySlotInfo.UpdateValues(t_soItem.UIBackground, t_soItem.UIIcon, pSlot.Quantity, t_soItem.Stackable);
             }
-            else
+            else if (pSlot.SlotDisplay != null)
             {
                 InventorySlotInformations t_inventorySlotInfo = pSlot.SlotDisplay.GetComponent<InventorySlotInformations>();
                 t_inventorySlotInfo.Clear();

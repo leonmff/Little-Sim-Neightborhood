@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saveFileName: inventoryEquipSave.game
   database: {fileID: 11400000, guid: 26fa4dcee2cc4f741a5a5f1296b5507c, type: 2}
+  TypeInventory: 1
   EncryptSaveFiles: 1
   AutoLoadOnAwake: 1
   AutoSaveOnInventory: 1
@@ -23,13 +24,13 @@ MonoBehaviour:
     ListInventorySlots:
     - AllowedItems: 00000000
       Item:
-        _name: Black SunGlasito
-        Id: 0
+        _name: 
+        Id: -1
         _stackable: 0
-      Quantity: 1
+      Quantity: 0
     - AllowedItems: 01000000
       Item:
-        _name: Bow Tie
-        Id: 5
-        _stackable: 1
-      Quantity: 1
+        _name: 
+        Id: -1
+        _stackable: 0
+      Quantity: 0

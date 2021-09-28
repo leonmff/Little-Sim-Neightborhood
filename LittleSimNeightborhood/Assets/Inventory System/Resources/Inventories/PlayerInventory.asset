@@ -14,13 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _saveFileName: inventorySave.game
   database: {fileID: 11400000, guid: 26fa4dcee2cc4f741a5a5f1296b5507c, type: 2}
+  TypeInventory: 0
   EncryptSaveFiles: 1
   AutoLoadOnAwake: 1
   AutoSaveOnInventory: 1
   ConstantAllowedItems: 0
   DefaultInventorySize: 35
   Container:
-    ListItems:
+    ListInventorySlots:
     - AllowedItems: 
       Item:
         _name: 

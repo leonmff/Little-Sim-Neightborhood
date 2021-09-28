@@ -4,9 +4,16 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Runtime.Serialization;
+using System;
 
 namespace InventorySystem
 {
+    public enum InventoryType
+    {
+        Inventory,
+        Equipment
+    }
+
     [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
     public class SOInventory : ScriptableObject
     {
@@ -15,6 +22,7 @@ namespace InventorySystem
 
         [Space(15)]
         public SOItemDatabase database;
+        public InventoryType TypeInventory;
 
         [Space(7)]
         public bool EncryptSaveFiles = true;
@@ -34,6 +42,8 @@ namespace InventorySystem
 
         private void OnEnable()
         {
+            //Debug.Log($"<size=22><color=aqua>Raising events!</color></size>");
+
             if (AutoLoadOnAwake)
                 Load();
         }
@@ -177,7 +187,7 @@ namespace InventorySystem
             }
         }
 
-        void LoadEncrypted()
+        IEnumerator LoadEncrypted()
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(SavePath, FileMode.Open, FileAccess.Read);
@@ -202,6 +212,8 @@ namespace InventorySystem
             }
 
             stream.Close();
+
+            yield break;
         }
 
         void LoadJSON()

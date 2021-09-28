@@ -47,9 +47,6 @@ namespace InventorySystem
             Quantity = pQuantity;
 
             OnAfterUpdate?.Invoke(this);
-
-            //if (Parent)
-            //    Parent.UpdateInventoryInformation(); 
         }
 
         public void RemoveItem() => UpdateSlot(new Item(), 0);

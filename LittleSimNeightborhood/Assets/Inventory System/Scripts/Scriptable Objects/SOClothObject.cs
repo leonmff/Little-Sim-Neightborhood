@@ -5,7 +5,7 @@ using UnityEngine;
 namespace InventorySystem
 {
     [CreateAssetMenu(fileName = "New Cloth Object", menuName = "Inventory System/Items/Cloth")]
-    public class SOGlassesObject : SOItem
+    public class SOClothObject : SOItem
     {
         [Space(15), Header("Item Specific Fields")]
         public RuntimeAnimatorController Animator;
