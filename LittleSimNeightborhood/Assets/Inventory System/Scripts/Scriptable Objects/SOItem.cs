@@ -4,9 +4,10 @@ namespace InventorySystem
 {
     public enum ItemType
     {
+        Glasses,
+        Belt,
         Food,
-        Equipment,
-        Cloth,
+        Axe,
         Default
     }
 
@@ -14,8 +15,9 @@ namespace InventorySystem
     public abstract class SOItem : ScriptableObject
     {
         public string Name;
-        public int Id;
+        //public int Id;
         public bool Stackable;
+        public Item Data = new Item();
 
         [Space(7)]
         public ItemType Type;
@@ -36,9 +38,7 @@ namespace InventorySystem
         string _name;
         public string Name { get => _name; }
 
-        [SerializeField]
-        int _id;
-        public int Id { get => _id; }
+        public int Id = -1;
 
         [SerializeField]
         bool _stackable;
@@ -47,8 +47,15 @@ namespace InventorySystem
         public Item(SOItem item)
         {
             _name = item.Name;
-            _id = item.Id;
+            Id = item.Data.Id;
             _stackable = item.Stackable;
+        }
+
+        public Item()
+        {
+            _name = "";
+            Id = -1;
+            _stackable = false;
         }
     }
 }

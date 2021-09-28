@@ -15,9 +15,8 @@ MonoBehaviour:
   Name: Ninja Black Belt
   Id: 4
   Stackable: 0
-  Type: 2
+  Type: 1
   UIIcon: {fileID: 0}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
   Description: 
-  TypeCloth: 2
   Animator: {fileID: 9100000, guid: c60a693a10c5a2c4bb540c108259037f, type: 2}

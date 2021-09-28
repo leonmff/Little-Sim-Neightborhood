@@ -3,49 +3,59 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CanvasManager : MonoBehaviour
+namespace InventorySystem
 {
-    [SerializeField]
-    GameObject _canvasInventory = null;
-
-    InventoryController _inventoryControl;
-
-    public static UnityAction OnCloseMenu;
-    public static UnityAction OnOpenMenu;
-
-    private void Awake()
+    public class CanvasManager : MonoBehaviour
     {
-        InitializeInventory();
-    }
+        [SerializeField]
+        GameObject _canvasInventory = null;
 
-    void InitializeInventory()
-    {
-        _inventoryControl = _canvasInventory.GetComponent<InventoryController>();
-        if (_inventoryControl)
-            _inventoryControl.InitializeSlots();
-    }
+        [SerializeField, Space(7)]
+        InventoryItems _inventoryControl = null;
+        [SerializeField]
+        InventoryEquips _inventoryEquipControl = null;
 
-    private void OnEnable()
-    {
-        PlayerMenus.OnInventoryKeyPressed += OpenCloseInventory;
-    }
+        MouseItemController _mouseItemControl;
 
-    private void OnDisable()
-    {
-        PlayerMenus.OnInventoryKeyPressed -= OpenCloseInventory;
-    }
+        public static UnityAction OnCloseMenu;
+        public static UnityAction OnOpenMenu;
 
-    public void OpenCloseInventory()
-    {
-        if (_canvasInventory.activeInHierarchy)
+        private void Awake()
         {
-            _canvasInventory.SetActive(false);
-            OnCloseMenu?.Invoke();
+            _mouseItemControl = _canvasInventory.GetComponent<MouseItemController>();
+
+            _mouseItemControl.Initialize();
+            InitializeInventories();
         }
-        else
+
+        void InitializeInventories()
         {
-            _canvasInventory.SetActive(true);
-            OnOpenMenu?.Invoke();
+            _inventoryControl.InitializeSlots();
+            _inventoryEquipControl.InitializeSlots();
+        }
+
+        private void OnEnable()
+        {
+            PlayerMenus.OnInventoryKeyPressed += OpenCloseInventory;
+        }
+
+        private void OnDisable()
+        {
+            PlayerMenus.OnInventoryKeyPressed -= OpenCloseInventory;
+        }
+
+        public void OpenCloseInventory()
+        {
+            if (_canvasInventory.activeInHierarchy)
+            {
+                _canvasInventory.SetActive(false);
+                OnCloseMenu?.Invoke();
+            }
+            else
+            {
+                _canvasInventory.SetActive(true);
+                OnOpenMenu?.Invoke();
+            }
         }
     }
 }

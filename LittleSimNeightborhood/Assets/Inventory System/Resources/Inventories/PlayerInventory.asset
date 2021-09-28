@@ -12,220 +12,291 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff327598d9fcafe41b486a69d741f2e5, type: 3}
   m_Name: PlayerInventory
   m_EditorClassIdentifier: 
+  _saveFileName: inventorySave.game
   database: {fileID: 11400000, guid: 26fa4dcee2cc4f741a5a5f1296b5507c, type: 2}
   EncryptSaveFiles: 1
-  AutoLoadOnAwake: 1
-  AutoSaveOnInventory: 1
+  AutoLoadOnAwake: 0
+  AutoSaveOnInventory: 0
   DefaultInventorySize: 35
   Container:
     ListItems:
-    - ID: 5
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: 5
       Item:
         _name: Bow Tie
         _id: 5
         _stackable: 1
-      Quantity: 5
-    - ID: 0
+      Quantity: 1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: 0
       Item:
         _name: Black SunGlasito
         _id: 0
         _stackable: 0
       Quantity: 1
-    - ID: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: 0
       Item:
         _name: Black SunGlasito
         _id: 0
         _stackable: 0
       Quantity: 1
-    - ID: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
+      Item:
+        _name: 
+        _id: -1
+        _stackable: 0
+      Quantity: 0
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: 0
       Item:
         _name: Black SunGlasito
         _id: 0
         _stackable: 0
       Quantity: 1
-    - ID: 0
-      Item:
-        _name: Black SunGlasito
-        _id: 0
-        _stackable: 0
-      Quantity: 1
-    - ID: 0
-      Item:
-        _name: Black SunGlasito
-        _id: 0
-        _stackable: 0
-      Quantity: 1
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0
-    - ID: -1
+    - AllowedItems: 
+      Parent: {fileID: 0}
+      ID: -1
       Item:
         _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
-        _stackable: 0
-      Quantity: 0
-    - ID: -1
-      Item:
-        _name: 
-        _id: 0
+        _id: -1
         _stackable: 0
       Quantity: 0

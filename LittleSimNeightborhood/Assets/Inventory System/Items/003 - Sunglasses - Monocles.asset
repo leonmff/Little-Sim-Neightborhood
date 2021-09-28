@@ -15,9 +15,8 @@ MonoBehaviour:
   Name: Epic Monocles
   Id: 3
   Stackable: 0
-  Type: 2
+  Type: 0
   UIIcon: {fileID: 0}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
   Description: 
-  TypeCloth: 1
   Animator: {fileID: 9100000, guid: d79cc8df1dc900543ae22fb05af64dd6, type: 2}

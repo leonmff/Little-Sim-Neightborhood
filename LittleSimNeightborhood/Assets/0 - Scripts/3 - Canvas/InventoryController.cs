@@ -4,167 +4,208 @@ using UnityEngine;
 using InventorySystem;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
-using System;
 using UnityEngine.UI;
 
-public class InventoryController : MonoBehaviour
+namespace InventorySystem
 {
-    [SerializeField]
-    SOInventory _soInventory = null;
-    [SerializeField]
-    SOItemDatabase _soDatabase = null;
-
-    [SerializeField, Space(7)]
-    Transform _buttonPanels = null;
-
-    [SerializeField, Space(7)]
-    Transform _tfDragItemImage = null;
-
-    Image _imgDragItem;
-
-    [SerializeField, InspectorReadOnly, Space(15)]
-    List<InventorySlotInformations> _listInventorySlots;
-
-    MouseItem _mouseItem;
-
-    Dictionary<GameObject, InventorySlot> _dicInventorySlots;
-
-    private void Awake()
+    public abstract class InventoryController : MonoBehaviour
     {
-        _imgDragItem = _tfDragItemImage.GetComponent<Image>();
+        [SerializeField]
+        SOInventory _soInventory = null;
 
-        _mouseItem = new MouseItem();
-        _mouseItem.RectTransform = _tfDragItemImage.GetComponent<RectTransform>();
-    }
+        [SerializeField]
+        SOItemDatabase _soDatabase = null;
 
-    public void InitializeSlots()
-    {
-        _dicInventorySlots = new Dictionary<GameObject, InventorySlot>();
-        _listInventorySlots = new List<InventorySlotInformations>();
+        public SOItemDatabase Database { get => _soDatabase; }
 
-        for (int index = 0; index < _buttonPanels.childCount; index++)
+        [SerializeField, Space(7)]
+        Transform _buttonPanels = null;
+
+        [SerializeField, InspectorReadOnly, Space(15)]
+        List<InventorySlotInformations> _listInventorySlots;
+
+        MouseItemController _mouseItemControl;
+
+        Dictionary<GameObject, InventorySlot> _dicInventorySlots;
+
+        Image _imgDragItem;
+
+        protected void Awake()
         {
-            GameObject t_objButton = _buttonPanels.GetChild(index).gameObject;
+            _mouseItemControl = GetComponent<MouseItemController>();
 
-            InventorySlotInformations t_inventorySlot = t_objButton.GetComponent<InventorySlotInformations>();
-            if (t_inventorySlot)
+            _imgDragItem = MouseData.RectTransform.GetComponent<Image>();
+        }
+
+        public void InitializeSlots()
+        {
+            _dicInventorySlots = new Dictionary<GameObject, InventorySlot>();
+            _listInventorySlots = new List<InventorySlotInformations>();
+
+            for (int index = 0; index < _buttonPanels.childCount; index++)
             {
-                t_inventorySlot.Initialize();
-                _listInventorySlots.Add(t_inventorySlot);
+                GameObject t_objButton = _buttonPanels.GetChild(index).gameObject;
+
+                InventorySlotInformations t_inventorySlot = t_objButton.GetComponent<InventorySlotInformations>();
+                if (t_inventorySlot)
+                {
+                    t_inventorySlot.Initialize();
+                    _listInventorySlots.Add(t_inventorySlot);
+                }
+
+                AddEvent(t_objButton, EventTriggerType.PointerEnter, delegate { OnEnter(t_objButton); });
+                AddEvent(t_objButton, EventTriggerType.PointerExit, delegate { OnExit(t_objButton); });
+                AddEvent(t_objButton, EventTriggerType.BeginDrag, delegate { OnDragStart(t_objButton); });
+                AddEvent(t_objButton, EventTriggerType.EndDrag, delegate { OnDragEnd(t_objButton); });
+                AddEvent(t_objButton, EventTriggerType.Drag, delegate { OnDrag(t_objButton); });
+
+                _dicInventorySlots.Add(t_objButton, _soInventory.Container.ListItems[index]);
             }
 
-            AddEvent(t_objButton, EventTriggerType.PointerEnter, delegate { OnEnter(t_objButton); });
-            AddEvent(t_objButton, EventTriggerType.PointerExit, delegate { OnExit(t_objButton); });
-            AddEvent(t_objButton, EventTriggerType.BeginDrag, delegate { OnDragStart(t_objButton); });
-            AddEvent(t_objButton, EventTriggerType.EndDrag, delegate { OnDragEnd(t_objButton); });
-            AddEvent(t_objButton, EventTriggerType.Drag, delegate { OnDrag(t_objButton); });
-
-            _dicInventorySlots.Add(t_objButton, _soInventory.Container.ListItems[index]);
+            LoadInventory();
         }
-    }
 
-    private void OnEnable() => LoadInventory();
+        protected void OnEnable() => LoadInventory();
 
-    void LoadInventory()
-    {
-        for (int index = 0; index < _soInventory.Container.ListItems.Count; index++)
+        protected void LoadInventory()
         {
-            if (index < _listInventorySlots.Count)
+            for (int index = 0; index < _soInventory.Container.ListItems.Count; index++)
             {
-                InventorySlot t_inventorySlot = _soInventory.Container.ListItems[index];
-                if (t_inventorySlot.ID <= -1)
-                    continue;
+                if (index < _listInventorySlots.Count)
+                {
+                    InventorySlot t_inventorySlot = _soInventory.Container.ListItems[index];
+                    t_inventorySlot.Parent = this;
 
-                SOItem t_item = _soDatabase.GetItem(t_inventorySlot.ID);
-                _listInventorySlots[index].UpdateValues(t_item.UIBackground, t_item.UIIcon, t_inventorySlot.Quantity, t_item.Stackable);
+                    if (t_inventorySlot.Item.Id <= -1)
+                        continue;
+
+                    SOItem t_item = _soDatabase.GetItem(t_inventorySlot.Item.Id);
+                    _listInventorySlots[index].UpdateValues(t_item.UIBackground, t_item.UIIcon, t_inventorySlot.Quantity, t_item.Stackable);
+                }
             }
         }
-    }
 
-    void UpdateInventoryInformation()
-    {
-        foreach (KeyValuePair<GameObject, InventorySlot> t_slot in _dicInventorySlots)
+        public void UpdateInventoryInformation()
         {
-            if (t_slot.Value.ID >= 0)
+            foreach (KeyValuePair<GameObject, InventorySlot> t_slot in _dicInventorySlots)
             {
-                SOItem t_soItem = _soDatabase.ListItems[t_slot.Value.Item.Id];
-                InventorySlotInformations t_inventorySlotInfo = t_slot.Key.GetComponent<InventorySlotInformations>();
+                if (t_slot.Value.Item.Id >= 0)
+                {
+                    SOItem t_soItem = t_slot.Value.SOItem; //_soDatabase.ListItems[t_slot.Value.Item.Id];
+                    InventorySlotInformations t_inventorySlotInfo = t_slot.Key.GetComponent<InventorySlotInformations>();
 
-                t_inventorySlotInfo.UpdateValues(t_soItem.UIBackground, t_soItem.UIIcon, t_slot.Value.Quantity, t_soItem.Stackable);
+                    t_inventorySlotInfo.UpdateValues(t_soItem.UIBackground, t_soItem.UIIcon, t_slot.Value.Quantity, t_soItem.Stackable);
+                }
+                else
+                {
+                    InventorySlotInformations t_inventorySlotInfo = t_slot.Key.GetComponent<InventorySlotInformations>();
+                    t_inventorySlotInfo.Clear();
+                }
+            }
+
+            if (_soInventory.AutoSaveOnInventory)
+                _soInventory.Save();
+        }
+
+        public void OnEnter(GameObject pObject)
+        {
+            MouseData.SlotHovered = pObject;
+
+            if (_dicInventorySlots.ContainsKey(pObject))
+                MouseData.InventorySlotHovered = _dicInventorySlots[pObject];
+        }
+
+        protected void OnDragStart(GameObject pObject)
+        {
+            InventorySlot t_inventorySlot = _dicInventorySlots[pObject];
+            if (t_inventorySlot.Item.Id >= 0)
+            {
+                _imgDragItem.sprite = _dicInventorySlots[pObject].SOItem.UIIcon; //_soDatabase.ListItems[t_inventorySlot.Item.Id].UIIcon;
+                _imgDragItem.color = Color.white;
+
+                MouseData.InventorySlot = t_inventorySlot;
+            }
+            else
+                _imgDragItem.color = Color.clear;
+        }
+
+        protected void OnDrag(GameObject pObject)
+        {
+            if (MouseData.InventorySlot != null)
+                MouseData.RectTransform.position = Input.mousePosition;
+        }
+
+        protected void OnDragEnd(GameObject pObject) => StartCoroutine(CoDragEnd(pObject));
+
+        protected IEnumerator CoDragEnd(GameObject pObject)
+        {
+            //var itemOnMouse = _mouseItemControl.MouseItem;
+            //var mouseHoverItem = itemOnMouse.InventorySlotHovered;
+            //var mouseHoverObj = itemOnMouse.SlotHovered;
+
+            //if (mouseHoverObj)
+            //{
+            //    if (mouseHoverItem.CanPlaceInSlot(_soInventory.database.GetItem(_dicInventorySlots[pObject].ID)) && (mouseHoverItem.Item.Id <= -1 || (mouseHoverItem.Item.Id >= 0 && _dicInventorySlots[pObject].CanPlaceInSlot(_soInventory.database.GetItem(mouseHoverItem.Item.Id)))))
+            //        _soInventory.SwapItem(_dicInventorySlots[pObject], mouseHoverItem.Parent._dicInventorySlots[mouseHoverObj]);
+            //}
+            //else
+            //{
+            //    yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation("The item will be destroyed."));
+
+            //    if (ConfirmationWindow.instance.Confirmed)
+            //        _soInventory.RemoveItem(_dicInventorySlots[pObject].Item);
+            //}
+
+            if (!MouseData.SlotHovered)
+            {
+                yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation("The item will be destroyed."));
+
+                if (ConfirmationWindow.instance.Confirmed)
+                    _dicInventorySlots[pObject].RemoveItem();
             }
             else
             {
-                InventorySlotInformations t_inventorySlotInfo = t_slot.Key.GetComponent<InventorySlotInformations>();
-                t_inventorySlotInfo.Clear();
+                bool t_canReplace = MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.GetItem(_dicInventorySlots[pObject].Item.Id));
+                bool t_hasEmptyID = MouseData.InventorySlotHovered.Item.Id <= -1;
+                bool t_idOcupied = MouseData.InventorySlotHovered.Item.Id >= 0;
+                //bool t_canReplaceInverse = _dicInventorySlots[pObject].CanPlaceInSlot(_soInventory.database.GetItem(MouseData.InventorySlotHovered.Item.Id));
+                
+                if (t_canReplace && (t_hasEmptyID || (t_idOcupied)))// && t_canReplaceInverse)))
+                    _soInventory.SwapItem(_dicInventorySlots[pObject], MouseData.InventorySlotHovered.Parent._dicInventorySlots[MouseData.SlotHovered]);
+
+                //if (MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.GetItem(_dicInventorySlots[pObject].ID)) && (mouseHoverItem.Item.Id <= -1 || (mouseHoverItem.Item.Id >= 0 && _dicInventorySlots[pObject].CanPlaceInSlot(_soInventory.database.GetItem(mouseHoverItem.Item.Id)))))
+                //    _soInventory.SwapItem(_dicInventorySlots[pObject], mouseHoverItem.Parent._dicInventorySlots[mouseHoverObj]);
+
+                //InventorySlot t_inventorySlotHovered = MouseData.InventoryControl._dicInventorySlots[MouseData.SlotHovered];
+                //_soInventory.SwapItem(_dicInventorySlots[pObject], t_inventorySlotHovered);
             }
-        }
 
-        _soInventory.Save();
-    }
-
-    public void OnEnter(GameObject pObject)
-    {
-        _mouseItem.ObjectHovered = pObject;
-
-        if (_dicInventorySlots.ContainsKey(pObject))
-            _mouseItem.InventorySlotHovered = _dicInventorySlots[pObject];
-    }
-
-    private void OnDragStart(GameObject pObject)
-    {
-        InventorySlot t_inventorySlot = _dicInventorySlots[pObject];
-        if (t_inventorySlot.ID >= 0)
-        {
-            _imgDragItem.sprite = _soDatabase.ListItems[t_inventorySlot.ID].UIIcon;
-            _imgDragItem.color = Color.white;
-
-            _mouseItem.InventorySlot = t_inventorySlot;
-        }
-        else
+            _imgDragItem.sprite = null;
             _imgDragItem.color = Color.clear;
-    }
 
-    private void OnDrag(GameObject pObject)
-    {
-        if (_mouseItem.InventorySlot != null)
-            _mouseItem.RectTransform.position = Input.mousePosition;
-    }
+            UpdateInventoryInformation();
 
-    private void OnDragEnd(GameObject pObject) => StartCoroutine(CoDragEnd(pObject));
-
-    IEnumerator CoDragEnd(GameObject pObject)
-    {
-        if (_mouseItem.ObjectHovered)
-            _soInventory.SwapItem(_dicInventorySlots[pObject], _dicInventorySlots[_mouseItem.ObjectHovered]);
-        else
-        {
-            yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation("The item will be destroyed."));
-
-            if (ConfirmationWindow.instance.Confirmed)
-                _soInventory.RemoveItem(_dicInventorySlots[pObject].Item);
+            yield return null;
         }
 
-        _imgDragItem.sprite = null;
-        _imgDragItem.color = Color.clear;
+        protected void OnExit(GameObject pObject)
+        {
+            MouseData.SlotHovered = null;
 
-        UpdateInventoryInformation();
-    }
+            //_mouseItemControl.MouseItem.SlotHovered = null;
+            //_mouseItemControl.MouseItem.InventorySlotHovered = null;
+        }
 
-    private void OnExit(GameObject pObject)
-    {
-        _mouseItem.ObjectHovered = null;
-        _mouseItem.InventorySlotHovered = null;
-    }
+        protected void AddEvent(GameObject pObject, EventTriggerType pTriggerType, UnityAction<BaseEventData> pAction)
+        {
+            EventTrigger t_eventTrigger = pObject.GetComponent<EventTrigger>();
 
-    void AddEvent(GameObject pObject, EventTriggerType pTriggerType, UnityAction<BaseEventData> pAction)
-    {
-        EventTrigger t_eventTrigger = pObject.GetComponent<EventTrigger>();
+            EventTrigger.Entry t_eventTriggerEntry = new EventTrigger.Entry();
 
-        EventTrigger.Entry t_eventTriggerEntry = new EventTrigger.Entry();
+            t_eventTriggerEntry.eventID = pTriggerType;
+            t_eventTriggerEntry.callback.AddListener(pAction);
 
-        t_eventTriggerEntry.eventID = pTriggerType;
-        t_eventTriggerEntry.callback.AddListener(pAction);
-
-        t_eventTrigger.triggers.Add(t_eventTriggerEntry);
+            t_eventTrigger.triggers.Add(t_eventTriggerEntry);
+        }
     }
 }

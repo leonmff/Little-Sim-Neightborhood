@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace InventorySystem
 {
-
     [CreateAssetMenu(fileName = "New Item Database", menuName = "Inventory System/Items Database")]
     public class SOItemDatabase : ScriptableObject, ISerializationCallbackReceiver
     {
@@ -16,11 +15,9 @@ namespace InventorySystem
 
         public void OnAfterDeserialize()
         {
-            //_dicItems = new Dictionary<int, SOItem>();
-
             for (int index = 0; index < ListItems.Length; index++)
             {
-                ListItems[index].Id = index;
+                ListItems[index].Data.Id = index;
                 _dicItems.Add(index, ListItems[index]);
             }
         }

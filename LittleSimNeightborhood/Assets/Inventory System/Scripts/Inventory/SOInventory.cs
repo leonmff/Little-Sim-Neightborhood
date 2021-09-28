@@ -10,6 +10,10 @@ namespace InventorySystem
     [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
     public class SOInventory : ScriptableObject
     {
+        [SerializeField]
+        string _saveFileName = "";
+
+        [Space(15)]
         public SOItemDatabase database;
 
         [Space(7)]
@@ -23,8 +27,7 @@ namespace InventorySystem
         [Space(7)]
         public Inventory Container;
 
-        const string SAVE_FILE_NAME = "inventorySave";
-        string SavePath { get => string.Concat(Application.persistentDataPath, "/", SAVE_FILE_NAME); }
+        string SavePath { get => string.Concat(Application.persistentDataPath, "/", _saveFileName); }
 
         private void OnEnable()
         {
@@ -32,13 +35,16 @@ namespace InventorySystem
                 Load();
         }
 
-        public void AddItem(Item pItem, int pQuantity)
+        public bool AddItem(Item pItem, int pQuantity)
         {
+            if (EmptySlotCount <= 0)
+                return false;
+
             if (!pItem.Stackable)
                 SetItemToFirstEmptySlot(pItem, pQuantity);
             else
             {
-                InventorySlot t_inventorySlot = Container.ListItems.Find(t_element => t_element.ID == pItem.Id);
+                InventorySlot t_inventorySlot = Container.ListItems.Find(t_element => t_element.Item.Id == pItem.Id);
                 if (t_inventorySlot != null)
                     t_inventorySlot.AddAmount(pQuantity);
                 else
@@ -47,13 +53,34 @@ namespace InventorySystem
 
             if (AutoSaveOnInventory)
                 Save();
+
+            return true;
+        }
+
+        public int EmptySlotCount
+        {
+            get
+            {
+                int t_counter = 0;
+
+                for (int index = 0; index < Container.ListItems.Count; index++)
+                {
+                    if (Container.ListItems[index].Item.Id <= -1)
+                        t_counter++;
+                }
+
+                return t_counter;
+            }
         }
 
         public void SwapItem(InventorySlot pInventorySlot1, InventorySlot pInventorySlot2)
         {
-            InventorySlot t_tempInventorySlot2 = new InventorySlot(pInventorySlot2.ID, pInventorySlot2.Item, pInventorySlot2.Quantity);
-            pInventorySlot2.UpdateSlot(pInventorySlot1.ID, pInventorySlot1.Item, pInventorySlot1.Quantity);
-            pInventorySlot1.UpdateSlot(t_tempInventorySlot2.ID, t_tempInventorySlot2.Item, t_tempInventorySlot2.Quantity);
+            if (pInventorySlot2.CanPlaceInSlot(pInventorySlot1.SOItem) && pInventorySlot1.CanPlaceInSlot(pInventorySlot2.SOItem))
+            {
+                InventorySlot t_tempInventorySlot2 = new InventorySlot(pInventorySlot2.Item, pInventorySlot2.Quantity);
+                pInventorySlot2.UpdateSlot(pInventorySlot1.Item, pInventorySlot1.Quantity);
+                pInventorySlot1.UpdateSlot(t_tempInventorySlot2.Item, t_tempInventorySlot2.Quantity);
+            }
         }
 
         public void RemoveItem(Item pItem)
@@ -61,7 +88,7 @@ namespace InventorySystem
             for (int index = 0; index < Container.ListItems.Count; index++)
             {
                 if (Container.ListItems[index].Item == pItem)
-                    Container.ListItems[index].UpdateSlot(-1, null, 0);
+                    Container.ListItems[index].UpdateSlot(null, 0);
             }
         }
 
@@ -69,10 +96,10 @@ namespace InventorySystem
         {
             for (int index = 0; index < Container.ListItems.Count; index++)
             {
-                if (Container.ListItems[index].ID <= -1)
+                if (Container.ListItems[index].Item.Id <= -1)
                 {
                     InventorySlot t_inventorySlot = Container.ListItems[index];
-                    t_inventorySlot.UpdateSlot(pItem.Id, pItem, pQuantity);
+                    t_inventorySlot.UpdateSlot(pItem, pQuantity);
                     return t_inventorySlot;
                 }
             }
@@ -89,7 +116,7 @@ namespace InventorySystem
             for (int index = 0; index < DefaultInventorySize; index++)
             {
                 InventorySlot t_inventorySlot = new InventorySlot();
-                t_inventorySlot.ID = -1;
+                //t_inventorySlot.Item.Id = -1;
 
                 Container.ListItems.Add(t_inventorySlot);
             }
@@ -149,7 +176,7 @@ namespace InventorySystem
             for (int index = 0; index < Container.ListItems.Count; index++)
             {
                 InventorySlot t_inventorySlot = t_newContainer.ListItems[index];
-                Container.ListItems[index].UpdateSlot(t_inventorySlot.ID, t_inventorySlot.Item, t_inventorySlot.Quantity);
+                Container.ListItems[index].UpdateSlot(t_inventorySlot.Item, t_inventorySlot.Quantity);
             }
 
             stream.Close();
@@ -166,7 +193,7 @@ namespace InventorySystem
         [ContextMenu("Clear")]
         public void Clear()
         {
-            Container = new Inventory();
+            Container.Clear();
         }
 
         [ContextMenu("Delete Save Data")]
@@ -175,7 +202,7 @@ namespace InventorySystem
             string[] t_filePaths = Directory.GetFiles(Application.persistentDataPath);
             foreach (string filePath in t_filePaths)
             {
-                if (filePath.Contains(SAVE_FILE_NAME))
+                if (filePath.Contains(_saveFileName))
                 {
                     File.Delete(filePath);
                     return;

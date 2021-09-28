@@ -16,7 +16,6 @@ public class PlayerInventory : MonoBehaviour
             if (t_groundItem)
             {
                 Item _item = new Item(t_groundItem.item);
-                Debug.Log(_item.Id);
                 _soInventory.AddItem(_item, 1);
                 Destroy(collision.gameObject);
             }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InventorySystem;
 
 public class PlayerInputController : MonoBehaviour
 {
@@ -30,16 +31,6 @@ public class PlayerInputController : MonoBehaviour
     InputPermissions _currentPermissions;
     [SerializeField]
     InputPermissions _previousPermissions;
-
-    //bool _canMove;
-    //[SerializeField, InspectorReadOnly]
-    //bool _canJump;
-    //[SerializeField, InspectorReadOnly]
-    //bool _canInteract;
-    //[SerializeField, InspectorReadOnly]
-    //bool _canOpenCloseMenus;
-    //[SerializeField, InspectorReadOnly]
-    //bool _canGetInput;
 
     private void Start()
     {
