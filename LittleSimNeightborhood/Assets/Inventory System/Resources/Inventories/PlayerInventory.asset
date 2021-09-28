@@ -16,6 +16,216 @@ MonoBehaviour:
   EncryptSaveFiles: 1
   AutoLoadOnAwake: 1
   AutoSaveOnInventory: 1
-  DefaultInventorySize: 30
+  DefaultInventorySize: 35
   Container:
-    Items: []
+    ListItems:
+    - ID: 5
+      Item:
+        _name: Bow Tie
+        _id: 5
+        _stackable: 1
+      Quantity: 5
+    - ID: 0
+      Item:
+        _name: Black SunGlasito
+        _id: 0
+        _stackable: 0
+      Quantity: 1
+    - ID: 0
+      Item:
+        _name: Black SunGlasito
+        _id: 0
+        _stackable: 0
+      Quantity: 1
+    - ID: 0
+      Item:
+        _name: Black SunGlasito
+        _id: 0
+        _stackable: 0
+      Quantity: 1
+    - ID: 0
+      Item:
+        _name: Black SunGlasito
+        _id: 0
+        _stackable: 0
+      Quantity: 1
+    - ID: 0
+      Item:
+        _name: Black SunGlasito
+        _id: 0
+        _stackable: 0
+      Quantity: 1
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0
+    - ID: -1
+      Item:
+        _name: 
+        _id: 0
+        _stackable: 0
+      Quantity: 0

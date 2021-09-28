@@ -19,8 +19,6 @@ namespace InventorySystem
 
         public InventorySlot(int pID, Item pItem, int pQuantity)
         {
-            Debug.Log($"<size=22><color=white>InventorySlot 02</color></size>");
-
             ID = pID;
             Item = pItem;
             Quantity = pQuantity;

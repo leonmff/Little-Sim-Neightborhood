@@ -19,4 +19,5 @@ MonoBehaviour:
   UIIcon: {fileID: -3091170511748471272, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
   Description: 
+  TypeCloth: 1
   Animator: {fileID: 9100000, guid: 5f1a1d674678a2c45abf94e6bba8b48e, type: 2}

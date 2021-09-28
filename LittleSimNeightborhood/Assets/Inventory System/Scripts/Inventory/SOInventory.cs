@@ -49,6 +49,22 @@ namespace InventorySystem
                 Save();
         }
 
+        public void SwapItem(InventorySlot pInventorySlot1, InventorySlot pInventorySlot2)
+        {
+            InventorySlot t_tempInventorySlot2 = new InventorySlot(pInventorySlot2.ID, pInventorySlot2.Item, pInventorySlot2.Quantity);
+            pInventorySlot2.UpdateSlot(pInventorySlot1.ID, pInventorySlot1.Item, pInventorySlot1.Quantity);
+            pInventorySlot1.UpdateSlot(t_tempInventorySlot2.ID, t_tempInventorySlot2.Item, t_tempInventorySlot2.Quantity);
+        }
+
+        public void RemoveItem(Item pItem)
+        {
+            for (int index = 0; index < Container.ListItems.Count; index++)
+            {
+                if (Container.ListItems[index].Item == pItem)
+                    Container.ListItems[index].UpdateSlot(-1, null, 0);
+            }
+        }
+
         public InventorySlot SetItemToFirstEmptySlot(Item pItem, int pQuantity)
         {
             for (int index = 0; index < Container.ListItems.Count; index++)

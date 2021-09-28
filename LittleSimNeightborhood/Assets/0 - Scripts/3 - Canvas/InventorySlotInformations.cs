@@ -9,11 +9,17 @@ public class InventorySlotInformations : MonoBehaviour
     [SerializeField]
     Image _imgBackgrond = null;
     [SerializeField]
+    GameObject _objSelected = null;
+    [SerializeField]
     Image _imgIcon = null;
     [SerializeField]
     TextMeshProUGUI _txtQuantity = null;
 
-    public void SetValues(Sprite pSpBackground, Sprite pSpIcon, int pQuantity, bool pStackable)
+    Button _btn;
+
+    public void Initialize() => _btn = GetComponent<Button>();
+
+    public void UpdateValues(Sprite pSpBackground, Sprite pSpIcon, int pQuantity, bool pStackable)
     {
         _imgBackgrond.sprite = pSpBackground;
         _imgIcon.sprite = pSpIcon;
@@ -36,5 +42,10 @@ public class InventorySlotInformations : MonoBehaviour
         _imgBackgrond.gameObject.SetActive(pValue);
         _imgIcon.gameObject.SetActive(pValue);
         _txtQuantity.gameObject.SetActive(pStackable);
+        _btn.enabled = pValue;
     }
+
+    public void Select() => _objSelected.SetActive(true);
+
+    public void Deselect() => _objSelected.SetActive(false);
 }

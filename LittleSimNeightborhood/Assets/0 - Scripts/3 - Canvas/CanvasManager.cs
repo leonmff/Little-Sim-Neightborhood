@@ -8,8 +8,22 @@ public class CanvasManager : MonoBehaviour
     [SerializeField]
     GameObject _canvasInventory = null;
 
+    InventoryController _inventoryControl;
+
     public static UnityAction OnCloseMenu;
     public static UnityAction OnOpenMenu;
+
+    private void Awake()
+    {
+        InitializeInventory();
+    }
+
+    void InitializeInventory()
+    {
+        _inventoryControl = _canvasInventory.GetComponent<InventoryController>();
+        if (_inventoryControl)
+            _inventoryControl.InitializeSlots();
+    }
 
     private void OnEnable()
     {
@@ -21,7 +35,7 @@ public class CanvasManager : MonoBehaviour
         PlayerMenus.OnInventoryKeyPressed -= OpenCloseInventory;
     }
 
-    void OpenCloseInventory()
+    public void OpenCloseInventory()
     {
         if (_canvasInventory.activeInHierarchy)
         {
