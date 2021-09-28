@@ -130,12 +130,19 @@ public class InventoryController : MonoBehaviour
             _mouseItem.RectTransform.position = Input.mousePosition;
     }
 
-    private void OnDragEnd(GameObject pObject)
+    private void OnDragEnd(GameObject pObject) => StartCoroutine(CoDragEnd(pObject));
+
+    IEnumerator CoDragEnd(GameObject pObject)
     {
         if (_mouseItem.ObjectHovered)
             _soInventory.SwapItem(_dicInventorySlots[pObject], _dicInventorySlots[_mouseItem.ObjectHovered]);
         else
-            _soInventory.RemoveItem(_dicInventorySlots[pObject].Item);
+        {
+            yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation("The item will be destroyed."));
+
+            if (ConfirmationWindow.instance.Confirmed)
+                _soInventory.RemoveItem(_dicInventorySlots[pObject].Item);
+        }
 
         _imgDragItem.sprite = null;
         _imgDragItem.color = Color.clear;

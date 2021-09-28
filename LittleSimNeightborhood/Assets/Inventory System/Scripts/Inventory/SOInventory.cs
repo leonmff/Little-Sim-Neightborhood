@@ -144,7 +144,14 @@ namespace InventorySystem
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(SavePath, FileMode.Open, FileAccess.Read);
-            Container = (Inventory)formatter.Deserialize(stream);
+            Inventory t_newContainer = (Inventory)formatter.Deserialize(stream);
+
+            for (int index = 0; index < Container.ListItems.Count; index++)
+            {
+                InventorySlot t_inventorySlot = t_newContainer.ListItems[index];
+                Container.ListItems[index].UpdateSlot(t_inventorySlot.ID, t_inventorySlot.Item, t_inventorySlot.Quantity);
+            }
+
             stream.Close();
         }
 

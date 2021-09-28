@@ -1569,6 +1569,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 434589238}
+  - component: {fileID: 434589242}
   - component: {fileID: 434589241}
   - component: {fileID: 434589240}
   - component: {fileID: 434589239}
@@ -1658,8 +1659,24 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &434589242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434589237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00a5d2e9917abed48bed9d7f1fff0732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objConfirmationWindow: {fileID: 1437245765}
+  _txtMessage: {fileID: 1841143238}
+  _btnConfirm: {fileID: 948054252}
+  _btnCancel: {fileID: 93290548}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -7816,12 +7833,12 @@ GameObject:
   - component: {fileID: 1437245768}
   - component: {fileID: 1437245767}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Panel Confirmation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1437245766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9552,7 +9569,7 @@ GameObject:
   - component: {fileID: 1841143239}
   - component: {fileID: 1841143238}
   m_Layer: 5
-  m_Name: TXT - Details
+  m_Name: TXT - Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
