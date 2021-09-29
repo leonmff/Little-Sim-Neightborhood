@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 006 - Belt - Golden
   m_EditorClassIdentifier: 
   Name: Golden Belt
+  Price: 350
   Stackable: 0
   Data:
     _name: 

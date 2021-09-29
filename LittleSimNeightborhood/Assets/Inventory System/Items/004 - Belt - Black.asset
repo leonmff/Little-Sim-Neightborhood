@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: 004 - Belt - Black
   m_EditorClassIdentifier: 
   Name: Ninja Black Belt
-  Id: 4
+  Price: 50
   Stackable: 0
+  Data:
+    _name: 
+    Id: 4
+    _stackable: 0
   Type: 1
-  UIIcon: {fileID: 0}
+  UIIcon: {fileID: 2850307966994837740, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
   Description: 
   Animator: {fileID: 9100000, guid: c60a693a10c5a2c4bb540c108259037f, type: 2}

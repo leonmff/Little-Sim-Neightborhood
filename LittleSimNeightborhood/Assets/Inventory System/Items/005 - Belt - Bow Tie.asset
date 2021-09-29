@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Bow Tie
   Price: 150
-  Stackable: 1
+  Stackable: 0
   Data:
     _name: 
     Id: 5

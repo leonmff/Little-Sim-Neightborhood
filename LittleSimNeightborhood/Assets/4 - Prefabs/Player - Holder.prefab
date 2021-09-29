@@ -368,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4368157957677900312}
   - component: {fileID: 4368157957677900295}
+  - component: {fileID: 1901026024553894898}
   - component: {fileID: 4368157957677900294}
   - component: {fileID: 4368157957677900313}
   m_Layer: 7
@@ -407,6 +408,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _equipGlasses: {fileID: 4368157957882774142}
   _equipBelts: {fileID: 4368157956430532700}
+--- !u!114 &1901026024553894898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4368157957677900315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10fdd756d33471e46ba01e9ca4e4a8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minMaxSize: {x: 0.95, y: 1.05}
+  _duration: 0.3
 --- !u!95 &4368157957677900294
 Animator:
   serializedVersion: 3
@@ -471,8 +486,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.65625, y: 1.5}
+  m_DrawMode: 1
+  m_Size: {x: 0.65625, y: 1.47}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

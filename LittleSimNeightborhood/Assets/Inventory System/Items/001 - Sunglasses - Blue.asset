@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: 001 - Sunglasses - Blue
   m_EditorClassIdentifier: 
   Name: Blue Rayban
-  Id: 1
+  Price: 200
   Stackable: 0
+  Data:
+    _name: 
+    Id: 1
+    _stackable: 0
   Type: 0
-  UIIcon: {fileID: 0}
+  UIIcon: {fileID: 1905096796402687639, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}
   Description: 
   Animator: {fileID: 9100000, guid: ae215534862983345963729d0983426c, type: 2}

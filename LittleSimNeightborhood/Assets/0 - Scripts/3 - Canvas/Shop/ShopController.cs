@@ -84,6 +84,11 @@ public class ShopController : MonoBehaviour
 
     void UpdateSlotsInformations()
     {
+        for (int index = 0; index < _listShopInformation.Count; index++)
+        {
+            _listShopInformation[index].gameObject.SetActive(false);
+        }
+
         for (int index = 0; index < _listItemsToSell.Count; index++)
         {
             SOItem t_soItem = _listItemsToSell[index];
