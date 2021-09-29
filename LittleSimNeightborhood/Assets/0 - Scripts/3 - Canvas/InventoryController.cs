@@ -22,14 +22,20 @@ namespace InventorySystem
         [SerializeField, Space(7)]
         Transform _buttonPanels = null;
 
+        [SerializeField, Space(7)]
+        RectTransform _rectDragImage;
+        [SerializeField]
+        Image _imgDragItem;
+
         [SerializeField, InspectorReadOnly, Space(15)]
         List<InventorySlotInformations> _listInventorySlots;
 
         Dictionary<GameObject, InventorySlot> _dicInventorySlots;
 
-        Image _imgDragItem;
 
-        protected void Awake() => _imgDragItem = MouseData.RectTransform.GetComponent<Image>();
+
+        //protected void Awake() => _imgDragItem = MouseData.RectTransform.GetComponent<Image>();
+        protected void Awake() => MouseData.RectTransform = _rectDragImage;
 
         public void InitializeSlots()
         {
@@ -61,6 +67,8 @@ namespace InventorySystem
 
         protected void LoadInventory()
         {
+            //Debug.Log($"<size=22><color=lime>Passing load data to inventory ui</color></size>");
+
             for (int index = 0; index < _soInventory.Container.ListInventorySlots.Count; index++)
             {
                 if (index < _listInventorySlots.Count)
@@ -170,8 +178,6 @@ namespace InventorySystem
 
             _imgDragItem.sprite = null;
             _imgDragItem.color = Color.clear;
-
-            //UpdateInventoryInformation();
 
             yield return null;
         }

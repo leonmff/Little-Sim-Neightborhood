@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using InventorySystem;
 
 public class NPC : MonoBehaviour, IInteractable
 {
+    [SerializeField]
+    List<SOItem> _listItemsToSell;
+
     public virtual void Interact() 
     {
-        Debug.Log($"<size=22><color=orange>Interacted with ''{transform.name}''</color></size>");
+        ShopController.instance.OpenShop(_listItemsToSell);
     }
 }

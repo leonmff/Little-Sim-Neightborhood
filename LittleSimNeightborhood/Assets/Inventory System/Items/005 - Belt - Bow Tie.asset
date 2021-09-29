@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 005 - Belt - Bow Tie
   m_EditorClassIdentifier: 
   Name: Bow Tie
+  Price: 150
   Stackable: 1
   Data:
     _name: 

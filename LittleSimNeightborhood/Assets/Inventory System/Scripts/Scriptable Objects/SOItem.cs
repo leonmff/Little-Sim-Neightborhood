@@ -15,7 +15,7 @@ namespace InventorySystem
     public abstract class SOItem : ScriptableObject
     {
         public string Name;
-        //public int Id;
+        public int Price;
         public bool Stackable;
         public Item Data = new Item();
 

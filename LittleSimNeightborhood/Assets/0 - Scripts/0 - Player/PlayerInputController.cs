@@ -42,12 +42,24 @@ public class PlayerInputController : MonoBehaviour
     {
         CanvasManager.OnOpenMenu += DisableAllKeepInventory;
         CanvasManager.OnCloseMenu += RestorePreviousPermissions;
+
+        ConfirmationWindow.OnConfirmationWindowOpened += DisableInput;
+        ConfirmationWindow.OnConfirmationWindowClosed += EnableInput;
+
+        ShopController.OnShopOpened += DisableInput;
+        ShopController.OnShopClosed += EnableInput;
     }
 
     private void OnDisable()
     {
         CanvasManager.OnOpenMenu -= DisableAllKeepInventory;
         CanvasManager.OnCloseMenu -= RestorePreviousPermissions;
+
+        ConfirmationWindow.OnConfirmationWindowOpened -= DisableInput;
+        ConfirmationWindow.OnConfirmationWindowClosed -= EnableInput;
+
+        ShopController.OnShopOpened -= DisableInput;
+        ShopController.OnShopClosed -= EnableInput;
     }
 
     public bool GetInputHorizontal(ref float pInputX)

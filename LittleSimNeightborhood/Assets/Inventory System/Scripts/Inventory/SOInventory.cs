@@ -42,8 +42,6 @@ namespace InventorySystem
 
         private void OnEnable()
         {
-            //Debug.Log($"<size=22><color=aqua>Raising events!</color></size>");
-
             if (AutoLoadOnAwake)
                 Load();
         }
@@ -118,7 +116,7 @@ namespace InventorySystem
             }
 
             // Set up for when inventory's full
-            Debug.Log($"<size=22><color=orange>Inventory's Full</color></size>");
+            Debug.LogWarning($"<size=22><color=red>Inventory's Full</color></size>");
             return null;
         }
 
@@ -159,6 +157,8 @@ namespace InventorySystem
             Stream stream = new FileStream(SavePath, FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, Container);
             stream.Close();
+
+            //Debug.Log($"<size=22><color=aqua>Game Saved...</color></size>");
         }
 
         void SaveJSON()
@@ -175,6 +175,8 @@ namespace InventorySystem
         {
             if (File.Exists(SavePath))
             {
+                //Debug.Log($"<size=22><color=white>Load file found</color></size>");
+
                 if (EncryptSaveFiles)
                     LoadEncrypted();
                 else
@@ -187,7 +189,7 @@ namespace InventorySystem
             }
         }
 
-        IEnumerator LoadEncrypted()
+        void LoadEncrypted()
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(SavePath, FileMode.Open, FileAccess.Read);
@@ -212,8 +214,6 @@ namespace InventorySystem
             }
 
             stream.Close();
-
-            yield break;
         }
 
         void LoadJSON()

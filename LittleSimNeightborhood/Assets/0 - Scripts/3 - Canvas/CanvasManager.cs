@@ -15,16 +15,11 @@ namespace InventorySystem
         [SerializeField]
         InventoryEquips _inventoryEquipControl = null;
 
-        MouseItemController _mouseItemControl;
-
         public static UnityAction OnCloseMenu;
         public static UnityAction OnOpenMenu;
 
         private void Awake()
         {
-            _mouseItemControl = _canvasInventory.GetComponent<MouseItemController>();
-
-            _mouseItemControl.Initialize();
             InitializeInventories();
         }
 

@@ -25,10 +25,16 @@ public class PlayerInventory : MonoBehaviour
             _soInventoryEquip.ListInventorySlots[index].OnAfterUpdate += AfterSlotUpdate;
         }
 
-        //_soInventory.Load();
-        //_soInventoryEquip.Load();
-
         StartCoroutine(DisplayEquippedItems());
+    }
+
+    private void OnApplicationQuit()
+    {
+        for (int index = 0; index < _soInventoryEquip.ListInventorySlots.Count; index++)
+        {
+            _soInventoryEquip.ListInventorySlots[index].OnBeforeUpdate -= BeforeSlotUpdate;
+            _soInventoryEquip.ListInventorySlots[index].OnAfterUpdate -= AfterSlotUpdate;
+        }
     }
 
     IEnumerator DisplayEquippedItems()
@@ -50,19 +56,15 @@ public class PlayerInventory : MonoBehaviour
         switch (pSlot.Parent.InventoryType)
         {
             case InventoryType.Inventory:
+
                 break;
             case InventoryType.Equipment:
-                //string t_debugMessage = string.Concat("REMOVED ''", pSlot.SOItem.name, "'' on ", pSlot.Parent.InventoryType, ", Allowed Items: ", string.Join(", ", pSlot.AllowedItems));
-                //Debug.Log($"<size=22><color=red>{t_debugMessage}</color></size>");
-
                 _equipControl.RemoveCloth(pSlot.SOItem);
-
                 break;
+
             default:
                 break;
         }
-
-        //Debug.Log($"<size=22><color=orange>BEFORE Update</color></size>");
     }
 
     public void AfterSlotUpdate(InventorySlot pSlot)
@@ -74,17 +76,14 @@ public class PlayerInventory : MonoBehaviour
         {
             case InventoryType.Inventory:
                 break;
-            case InventoryType.Equipment:
-                //string t_debugMessage = string.Concat("PLACED ''", pSlot.SOItem.name, "'' on ", pSlot.Parent.InventoryType, ", Allowed Items: ", string.Join(", ", pSlot.AllowedItems));
-                //Debug.Log($"<size=22><color=aqua>{t_debugMessage}</color></size>");
 
+            case InventoryType.Equipment:
                 _equipControl.EquipCloth(pSlot.SOItem);
                 break;
+
             default:
                 break;
         }
-
-        //Debug.Log($"<size=22><color=lime>AFTER Update</color></size>");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

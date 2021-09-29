@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: 000 - Sunglasses - Black
   m_EditorClassIdentifier: 
   Name: Black SunGlasito
-  Id: 0
+  Price: 100
   Stackable: 0
+  Data:
+    _name: 
+    Id: 0
+    _stackable: 0
   Type: 0
   UIIcon: {fileID: -3091170511748471272, guid: 571b992123bae3440b9533d49f39eb6f, type: 3}
   UIBackground: {fileID: 21300000, guid: 41b00c3781537dd4e9d60980fc56f805, type: 3}

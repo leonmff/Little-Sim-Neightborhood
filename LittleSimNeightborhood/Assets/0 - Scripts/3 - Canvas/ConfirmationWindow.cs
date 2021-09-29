@@ -26,6 +26,9 @@ public class ConfirmationWindow : MonoBehaviour
 
     TextMeshProUGUI _txtBtnCancel;
 
+    public static UnityAction OnConfirmationWindowOpened;
+    public static UnityAction OnConfirmationWindowClosed;
+
     bool _confirmed;
     public bool Confirmed { get => _confirmed; }
 
@@ -77,6 +80,8 @@ public class ConfirmationWindow : MonoBehaviour
     {
         _objConfirmationWindow.SetActive(true);
 
+        OnConfirmationWindowOpened?.Invoke();
+
         WaitForUIButtons t_waitForButton = new WaitForUIButtons(_btnConfirm, _btnCancel);
 
         yield return t_waitForButton.Reset();
@@ -84,5 +89,7 @@ public class ConfirmationWindow : MonoBehaviour
         _confirmed = (t_waitForButton.PressedButton == _btnConfirm);
 
         _objConfirmationWindow.SetActive(false);
+
+        OnConfirmationWindowClosed?.Invoke();
     }
 }
