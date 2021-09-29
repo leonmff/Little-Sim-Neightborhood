@@ -191,8 +191,6 @@ namespace InventorySystem
                 }
                 else
                 {
-                    Debug.Log($"<size=22><color=aqua>SlotHovered: {MouseData.SlotHovered}</color></size>");
-
                     bool t_canReplace = MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.ListItems[_dicInventorySlots[pObject].Item.Id]);
                     bool t_hasEmptyID = MouseData.InventorySlotHovered.Item.Id <= -1;
                     bool t_idOcupied = MouseData.InventorySlotHovered.Item.Id >= 0;

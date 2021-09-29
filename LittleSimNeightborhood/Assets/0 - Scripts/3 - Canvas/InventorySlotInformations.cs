@@ -18,13 +18,31 @@ public class InventorySlotInformations : MonoBehaviour
     [SerializeField]
     Button _btn = null;
 
+    [SerializeField, Space(15)]
+    Image _imgPreview = null;
+
     public void UpdateValues(Sprite pSpBackground, Sprite pSpIcon, int pQuantity, bool pStackable)
     {
         _imgBackgrond.sprite = pSpBackground;
         _imgIcon.sprite = pSpIcon;
         _txtQuantity.text = pQuantity.ToString();
 
+        UpdateImagePreview(pSpIcon);
+
         EnableDisable(true, pStackable);
+    }
+
+    void UpdateImagePreview(Sprite pIcon)
+    {
+        if (_imgPreview)
+        {
+            _imgPreview.sprite = pIcon;
+
+            if (_imgPreview.sprite != null)
+                _imgPreview.color = Color.white;
+            else
+                _imgPreview.color = Color.clear;
+        }
     }
 
     public void Clear()
@@ -32,6 +50,9 @@ public class InventorySlotInformations : MonoBehaviour
         _imgBackgrond.sprite = null;
         _imgIcon.sprite = null;
         _txtQuantity.text = "";
+
+        if (_imgPreview)
+            _imgPreview.color = Color.clear;
 
         EnableDisable(false, false);
     }
