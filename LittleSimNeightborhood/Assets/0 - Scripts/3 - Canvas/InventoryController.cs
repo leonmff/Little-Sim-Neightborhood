@@ -27,6 +27,9 @@ namespace InventorySystem
         [SerializeField]
         Image _imgDragItem;
 
+        [SerializeField, Space(15)]
+        GameObject _objShop = null;
+
         [SerializeField, InspectorReadOnly, Space(15)]
         List<InventorySlotInformations> _listInventorySlots;
 
@@ -50,7 +53,7 @@ namespace InventorySystem
                 if (t_inventorySlot)
                     _listInventorySlots.Add(t_inventorySlot);
 
-                AddEvent(t_objButton, EventTriggerType.PointerEnter, delegate { OnEnter(t_objButton); });
+                AddEvent(t_objButton, EventTriggerType.PointerEnter, delegate { OnHoverOverObject(t_objButton); });
                 AddEvent(t_objButton, EventTriggerType.PointerExit, delegate { OnExit(t_objButton); });
                 AddEvent(t_objButton, EventTriggerType.BeginDrag, delegate { OnDragStart(t_objButton); });
                 AddEvent(t_objButton, EventTriggerType.EndDrag, delegate { OnDragEnd(t_objButton); });
@@ -59,6 +62,9 @@ namespace InventorySystem
                 _soInventory.ListInventorySlots[index].SlotDisplay = t_objButton;
                 _dicInventorySlots.Add(t_objButton, _soInventory.Container.ListInventorySlots[index]);
             }
+
+            AddEvent(_objShop, EventTriggerType.PointerEnter, delegate { OnHoverOverObject(_objShop); });
+            AddEvent(_objShop, EventTriggerType.PointerExit, delegate { OnExit(_objShop); });
 
             LoadInventory();
         }
@@ -127,12 +133,12 @@ namespace InventorySystem
                 _soInventory.Save();
         }
 
-        public void OnEnter(GameObject pObject)
+        public void OnHoverOverObject(GameObject pObjectHovered)
         {
-            MouseData.SlotHovered = pObject;
+            MouseData.SlotHovered = pObjectHovered;
 
-            if (_dicInventorySlots.ContainsKey(pObject))
-                MouseData.InventorySlotHovered = _dicInventorySlots[pObject];
+            if (_dicInventorySlots.ContainsKey(pObjectHovered))
+                MouseData.InventorySlotHovered = _dicInventorySlots[pObjectHovered];
         }
 
         protected void OnDragStart(GameObject pObject)
@@ -168,12 +174,32 @@ namespace InventorySystem
             }
             else
             {
-                bool t_canReplace = MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.ListItems[_dicInventorySlots[pObject].Item.Id]);
-                bool t_hasEmptyID = MouseData.InventorySlotHovered.Item.Id <= -1;
-                bool t_idOcupied = MouseData.InventorySlotHovered.Item.Id >= 0;
+                if (MouseData.SlotHovered.CompareTag("Shop"))
+                {
+                    ShopController t_shopControl = MouseData.SlotHovered.GetComponentInParent<ShopController>();
 
-                if (t_canReplace && (t_hasEmptyID || t_idOcupied))
-                    _soInventory.SwapItem(_dicInventorySlots[pObject], MouseData.InventorySlotHovered.Parent._dicInventorySlots[MouseData.SlotHovered]);
+                    InventorySlot t_inventorySlot = _dicInventorySlots[pObject];
+                    int t_sellPrice = Mathf.FloorToInt((t_inventorySlot.SOItem.Price * (t_inventorySlot.Item.Stackable ? t_inventorySlot.Quantity : 1f)) * 0.7f);
+
+                    yield return StartCoroutine(ConfirmationWindow.instance.CallConfirmation(string.Concat("Sell it for ", t_sellPrice)));
+
+                    if (ConfirmationWindow.instance.Confirmed)
+                    {
+                        _dicInventorySlots[pObject].RemoveItem();
+                        t_shopControl.SellItem(t_sellPrice);
+                    }
+                }
+                else
+                {
+                    Debug.Log($"<size=22><color=aqua>SlotHovered: {MouseData.SlotHovered}</color></size>");
+
+                    bool t_canReplace = MouseData.InventorySlotHovered.CanPlaceInSlot(_soInventory.database.ListItems[_dicInventorySlots[pObject].Item.Id]);
+                    bool t_hasEmptyID = MouseData.InventorySlotHovered.Item.Id <= -1;
+                    bool t_idOcupied = MouseData.InventorySlotHovered.Item.Id >= 0;
+
+                    if (t_canReplace && (t_hasEmptyID || t_idOcupied))
+                        _soInventory.SwapItem(_dicInventorySlots[pObject], MouseData.InventorySlotHovered.Parent._dicInventorySlots[MouseData.SlotHovered]);
+                }
             }
 
             _imgDragItem.sprite = null;

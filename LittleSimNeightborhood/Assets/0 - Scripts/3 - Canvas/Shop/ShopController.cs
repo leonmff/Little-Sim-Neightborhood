@@ -77,6 +77,11 @@ public class ShopController : MonoBehaviour
         _soInventory.AddItem(pItem, 1);
     }
 
+    public void SellItem(int pPrice)
+    {
+        _soPlayerGold.Value = _soPlayerGold.Value + pPrice;
+    }
+
     void UpdateSlotsInformations()
     {
         for (int index = 0; index < _listItemsToSell.Count; index++)
@@ -106,5 +111,15 @@ public class ShopController : MonoBehaviour
     {
         yield return new WaitWhile(() => _objInventory.activeInHierarchy);
         _objShop.SetActive(false);
+    }
+
+    public void OnHover()
+    {
+        Debug.Log($"Hovering me!");
+    }
+
+    public void OnExit()
+    {
+        Debug.Log($"Hovering me stoped!");
     }
 }
